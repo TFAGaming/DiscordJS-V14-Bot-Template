@@ -8,8 +8,8 @@ I'm really happy about this news, I love you all ♥
 YouTube channel is linked [here](https://www.youtube.com/channel/UCs6YOMcjWMs-OMxhgaG9ttg). Subscribing is not required, only required is to enjoy your day/night :)
 
 # Requirements to run this project:
-* <h3>Discord.js v14 package.</h3> [![](https://img.shields.io/badge/discord.js-v14.0.1-blue.svg?logo=npm)](https://discord.js.org/)
-* <h3>NodeJS version above 16.9.</h3> [![](https://img.shields.io/badge/nodejs-16.16.0-green.svg)](https://www.nodejs.org)
+* <h3>Discord.js v14 package.</h3> [![NPM](https://img.shields.io/badge/discord.js-v14.0.1-blue.svg?logo=npm)](https://discord.js.org/)
+* <h3>NodeJS version above 16.9.</h3> [![NODE](https://img.shields.io/badge/nodejs-16.16.0-green.svg)](https://www.nodejs.org)
 
 # Setup:
 * ***1-*** Create a new application at and make the application a Bot. Make sure to enable the three Gateaway intents!
