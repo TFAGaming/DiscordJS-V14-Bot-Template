@@ -1,0 +1,13 @@
+{
+
+  "Prefix": "?",
+
+  "Handlers": {
+    "MONGO": ""
+  },
+  
+  "Client": {
+    "TOKEN": ""
+  }
+  
+}
