@@ -1,4 +1,5 @@
 <img src="https://media.discordapp.net/attachments/993843674750394378/998703932970905600/V14_Handler.png?width=960&height=540">
+
 # DiscordJS V14 Bot Template:
 A simple discord bot project that is running with NodeJS and the package discord.js version 14. Prefix commands are only available for now.
 
