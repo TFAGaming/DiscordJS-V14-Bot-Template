@@ -9,7 +9,7 @@ YouTube channel is linked [here](https://www.youtube.com/channel/UCs6YOMcjWMs-OM
 
 # Requirements to run this project:
 * <h3>Discord.js v14 package.</h3> <img src="https://img.shields.io/badge/discord.js-v14.0.1-blue.svg?logo=npm">
-* <h3>NodeJS version above 16.9.</h3> <img src="https://img.shields.io/badge/nodejs-16.16.0-green.svg">
+* <h3>NodeJS version 16.9 or above.</h3> <img src="https://img.shields.io/badge/nodejs-16.16.0-green.svg">
 
 # Setup:
 * ***1-*** Create a new application at and make the application a Bot. Make sure to enable the three Gateaway intents!
