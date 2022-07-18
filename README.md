@@ -34,5 +34,8 @@ Well, there are many changes. [Click here](https://discordjs.guide/additional-in
 * Embed colors codes has been changed. From `RED` from an example, it should be `Red`.
 * Many many changes...
 
+# Something doesn't work well here.
+Sometimes I (me, T.F.A) could do mistakes that I didn't notice them. If there is an actual error, DM me on Discord: **T.F.A#7524**
+
 # Credits are required?
 Well, if you are forking this project and then sharing it again is **UNACCEPTABLE**. But, giving credits in commands such as ?help, ?commands... etc is **NOT** required and you can give credits in any commands if you want, only **REQUIRED** in README.md.
