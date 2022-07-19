@@ -25,7 +25,7 @@ client.on('messageCreate', async message => {
 
   if (command) {
     if (command.permissions) {
-      if (!message.member.permissions.has(PermissionsBitField.resolve(command.userPerms || []))) return message.reply({
+      if (!message.member.permissions.has(PermissionsBitField.resolve(command.permissions || []))) return message.reply({
         embeds: [
           new EmbedBuilder()
             .setDescription(`🚫 Unfortunately, you are not authorized to use this command.`)
