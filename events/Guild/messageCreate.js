@@ -34,6 +34,26 @@ client.on('messageCreate', async message => {
       })
     }
 
+    if (command.owner, command.owner == true) {
+      if (!config.Users.OWNERS) return;
+
+      const allowedUsers = []; // New Array.
+
+      config.Users.OWNERS.forEach(user => {
+        const fetchedUser = message.guild.members.cache.get(user);
+        if (!fetchedUser) return allowedUsers.push('*Unknown User#0000*');
+        allowedUsers.push(`${fetchedUser.user.tag}`);
+      });
+
+      if (!config.Users.OWNERS.some(ID => message.member.id.includes(ID))) return message.reply({
+        embeds: [
+          new EmbedBuilder()
+            .setDescription(`🚫 Sorry but only owners can use this command! Allowed users:\n**${allowedUsers.join(", ")}**`)
+            .setColor("Red")
+        ]
+      })
+    }
+
     command.run(client, message, args, prefix, config);
   }
 })
