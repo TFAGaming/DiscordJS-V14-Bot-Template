@@ -19,7 +19,7 @@ module.exports = {
 
     message.reply({ embeds: [
       new EmbedBuilder()
-        .setDescription(`Only owners command! \nOwners: **${owners.join(", ")}**`)
+        .setDescription(`Only owners command! \nOwners: **${ownersARRAY.join(", ")}**`)
         .setColor("Yellow")
     ] })
     
