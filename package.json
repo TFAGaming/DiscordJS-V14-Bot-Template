@@ -1,0 +1,20 @@
+{
+  "name": "DiscordJS-V14-Bot-Template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "T.F.A#7524",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^1.0.0",
+    "colors": "^1.4.0",
+    "discord-api-types": "^0.36.2",
+    "discord.js": "^14.0.2",
+    "mongoose": "^6.4.4",
+    "node-fetch": "^2.6.7"
+  }
+}
