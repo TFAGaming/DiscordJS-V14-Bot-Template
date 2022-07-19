@@ -22,6 +22,9 @@ YouTube channel is linked [here](https://www.youtube.com/channel/UCs6YOMcjWMs-OM
 * ***4***- After doing the steps above, go to shell and type `node .` or `node index.js`.
 * ***5***- Ready! Your bot should be online now.
 
+# How to update discord.js package?
+Go to shell and type `npm i discord.js` or `npm i discord.js@latest`.
+
 # Why do I need MongoDB?
 MongoDB is **NOT** required, you can add it in anytime you want. By the way, Mongo is the best Database, better than Quick.DB.
 
@@ -35,7 +38,7 @@ Well, there are many changes. [Click here](https://discordjs.guide/additional-in
 * Many many changes...
 
 # Something doesn't work well here.
-Sometimes I (me, T.F.A) could do mistakes that I didn't notice them. If there is an actual error, DM me on Discord: **T.F.A#7524**
+Sometimes I (me, T.F.A) could do mistakes that I didn't notice them. If there is an actual error, DM me on Discord: **T.F.A#7524**.
 
 # Credits are required?
 Well, if you are forking this project and then sharing it again is **UNACCEPTABLE**. But, giving credits in commands such as ?help, ?commands... etc is **NOT** required and you can give credits in any commands if you want, only **REQUIRED** in README.md.
