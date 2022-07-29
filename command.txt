@@ -1,0 +1,10 @@
+module.exports = {
+  name: "", // Your command name.
+  permissions: ['SendMessages'], // Your command permission(s).
+  owner: false, // If this is "true", only owners that were provided in config.json are allowed to use this command. If this is "false" or not added, everyone can use it and also must have the required permission(s) above.
+  run: async (client, message, args, prefix, config, db) => {
+
+    // Your code here!
+    
+  },
+};
