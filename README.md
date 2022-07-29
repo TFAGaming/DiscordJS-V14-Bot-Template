@@ -1,6 +1,6 @@
 <img src="https://media.discordapp.net/attachments/993843674750394378/998703932970905600/V14_Handler.png?width=960&height=540">
 
-## ⚠️ Warning: Discord.js v14 developers are always updating to a new version. [Click here](https://www.npmjs.com/package/discord.js) to check and update the package.
+## ⚠️ Warning: Discord.js v14 developers are always updating the package to a new version. [Click here](https://www.npmjs.com/package/discord.js) to check and update the package for your project.
 
 # DiscordJS V14 Bot Template:
 A simple discord bot project that is running with NodeJS and the package discord.js version 14. Prefix commands are only available for now.
@@ -12,7 +12,7 @@ I'm really happy about this news, I love you all ♥
 YouTube channel is linked [here](https://www.youtube.com/channel/UCs6YOMcjWMs-OMxhgaG9ttg). Subscribing is not required, only required is to enjoy your day/night :)
 
 # Requirements to run this project:
-* <h3>Discord.js v14 package.</h3> <img src="https://img.shields.io/badge/discord.js-v14.0.2-blue.svg?logo=npm">
+* <h3>Discord.js v14 package.</h3> <img src="https://img.shields.io/badge/discord.js-v14.1.1-blue.svg?logo=npm">
 * <h3>NodeJS version 16.9 or above.</h3> <img src="https://img.shields.io/badge/nodejs-16.16.0-green.svg">
 
 # Setup:
@@ -25,7 +25,7 @@ YouTube channel is linked [here](https://www.youtube.com/channel/UCs6YOMcjWMs-OM
 * ***5***- Ready! Your bot should be online now.
 
 # How to update discord.js package?
-Go to shell and type `npm i discord.js` or `npm i discord.js@latest`.
+Go to shell and type `npm i discord.js@latest`. If you want a specific version, use `npm i discord.js@[version]`. (Just replace `[version]` with your specified package version.)
 
 # Why do I need MongoDB?
 MongoDB is **NOT** required, you can add it in anytime you want. By the way, Mongo is the best Database, better than Quick.DB.
