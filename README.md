@@ -1,5 +1,7 @@
 <img src="https://media.discordapp.net/attachments/993843674750394378/998703932970905600/V14_Handler.png?width=960&height=540">
 
+⚠️ Major updates are going to be on this [Replit](https://replit.com/@TFAGamingDev/Discord-Bot-Template-DJS-V14?v=1) project.
+
 ## ⚠️ Warning: Discord.js v14 developers are always updating the package to a new version. [Click here](https://www.npmjs.com/package/discord.js) to check and update the package for your project.
 
 # DiscordJS V14 Bot Template:
