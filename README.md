@@ -1,8 +1,6 @@
 <img src="https://media.discordapp.net/attachments/993843674750394378/998703932970905600/V14_Handler.png?width=960&height=540">
 
-<p align="center">
- [![Run on Replit](https://replit.com/badge/github/TFAGaming/DiscordJS-V14-Bot-Template)](https://replit.com/github/TFAGaming/DiscordJS-V14-Bot-Template)
-</p>
+[![Run on Replit](https://replit.com/badge/github/TFAGaming/DiscordJS-V14-Bot-Template)](https://replit.com/github/TFAGaming/DiscordJS-V14-Bot-Template)
 
 ## ⚠️ Warning: Discord.js v14 developers are always updating the package to a new version. [Click here](https://www.npmjs.com/package/discord.js) to check and update the package for your project.
 
