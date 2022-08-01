@@ -5,7 +5,7 @@
 # DiscordJS V14 Bot Template:
 A simple discord bot project that is running with NodeJS and the package discord.js version 14. Prefix commands are only available for now.
 
-Copy the project on Replit:
+Copy the project on Replit: <br>
 [![Run on Replit](https://replit.com/badge/github/TFAGaming/DiscordJS-V14-Bot-Template)](https://replit.com/@TFAGamingDev/Discord-Bot-Template-DJS-V14?v=1)
 
 # Features:
