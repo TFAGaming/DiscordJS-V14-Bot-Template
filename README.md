@@ -1,12 +1,13 @@
 <img src="https://media.discordapp.net/attachments/993843674750394378/998703932970905600/V14_Handler.png?width=960&height=540">
 
+<p align="center">
+ [![Run on Replit](https://replit.com/badge/github/TFAGaming/DiscordJS-V14-Bot-Template)](https://replit.com/github/TFAGaming/DiscordJS-V14-Bot-Template)
+</p>
+
 ## ⚠️ Warning: Discord.js v14 developers are always updating the package to a new version. [Click here](https://www.npmjs.com/package/discord.js) to check and update the package for your project.
 
 # DiscordJS V14 Bot Template:
 A simple discord bot project that is running with NodeJS and the package discord.js version 14. Prefix commands are only available for now.
-
-Copy the project on Replit: <br>
-[![Run on Replit](https://replit.com/badge/github/TFAGaming/DiscordJS-V14-Bot-Template)](https://replit.com/@TFAGamingDev/Discord-Bot-Template-DJS-V14?v=1)
 
 # Features:
 
