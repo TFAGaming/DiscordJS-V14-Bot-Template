@@ -1,62 +1,68 @@
-<img src="https://media.discordapp.net/attachments/993843674750394378/998703932970905600/V14_Handler.png?width=960&height=540">
+<br>
+<p align="center">
+    <img src="https://media.discordapp.net/attachments/996343173922168872/1004336895800643634/2022-08-03_11_35_27-Markdown_Live_Preview.png">
+</p>
 
-## Fork this GitHub repo:
-[![Run on Replit](https://replit.com/badge/github/TFAGaming/DiscordJS-V14-Bot-Template)](https://replit.com/github/TFAGaming/DiscordJS-V14-Bot-Template)
-## Fork the Replit project:
-[![Run on Replit](https://replit.com/badge/github/TFAGaming/DiscordJS-V14-Bot-Template)](https://replit.com/@TFAGamingDev/Discord-Bot-Template-DJS-V14)
+<p align="center">
+    <a style="font-size: 20px; font-family:verdana"><b>Project Language:</b></a><br>
+    <img alt='javascript' src='https://img.shields.io/badge/JavaScript-100000?style=for-the-badge&logo=javascript&logoColor=FFD000&labelColor=000000&color=EAE9E9'/>
+</p>
 
-## ⚠️ Warning: Discord.js v14 developers are always updating the package to a new version. [Click here](https://www.npmjs.com/package/discord.js) to check and update the package for your project.
+<p align="center">
+    <a style="font-size: 20px; font-family:verdana"><b>Fork/Download for:</b></a><br>
+    <a href="https://replit.com/@TFAGamingDev/Discord-Bot-Template-DJS-V14">
+        <img src="https://img.shields.io/badge/Repl.it-100000?style=for-the-badge&logo=replit&logoColor=FFFFFF&labelColor=000000&color=EAE9E9">
+    </a>
+    <a href="https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/releases/">
+        <img src="https://img.shields.io/badge/Visual_Studio Code-100000?style=for-the-badge&logo=visual studio code&logoColor=0084FF&labelColor=000000&color=EAE9E9">
+    </a>
+</p>
 
-# DiscordJS V14 Bot Template:
-A simple discord bot project that is running with NodeJS and the package discord.js version 14. Prefix commands are only available for now.
+<p align="center">
+    <a style="font-size: 20px; font-family:verdana"><b>Project Requirements:</b></a><br>
+    <a href="https://nodejs.org/en/">
+        <img src="https://img.shields.io/badge/Node.JS_version ^16.9 -100000?style=for-the-badge&logo=node.js&logoColor=26FF00&labelColor=000000&color=EAE9E9">
+    </a>
+    <a href="https://www.npmjs.com/package/discord.js">
+        <img src="https://img.shields.io/badge/Discord.js_version ^14.1.0-100000?style=for-the-badge&logo=npm&logoColor=26FF00&labelColor=000000&color=EAE9E9">
+    </a>
+</p>
 
-# Features:
+<p align="center">
+<a style="font-size: 20px; font-family:verdana"><b>Database Available:</b></a><br>
+    <a href='https://www.mongodb.com/' target="_blank">
+        <img alt='Mongodb' src='https://img.shields.io/badge/MongoDB-100000?style=for-the-badge&logo=Mongodb&logoColor=00FF00&labelColor=000000&color=EAE9E9'/>
+    </a>
+</p>
 
-| Features:      | GitHub repo | Replit project |
-| ----------- | ----------- | ----------- |
-| Prefix cmds Handler | 🟩 | 🟩 | 
-| Slash cmds Handler | 🟥 | 🟩 |
-| Custom prefix | 🟩 | 🟩 |
-| Permissions commands | 🟩 | 🟩 |
-| Owner only commands | 🟩 | 🟩
-| MongoDB | 🟩 | 🟩 |
+# DiscordJS V14 Bot Template - Introduction:
+A Discord bot project made with the npm package discord.js version 14 and it handles Prefix and Slash commands. You can create many commands as you want to improve your Bot! **Project made with ❤ by TFAGaming**.
 
-# Before getting started...
-THANK YOU ALL FOR **150** SUBSCRIBERS!!! 😍🥳🥳🤩🤩<br>
-I'm really happy about this news, I love you all ♥
+# How to setup:
+• 1- Choose a good IDE to start working on your Bot (*Recommended for Hosting 24/7: Replit*), and then Download/fork this project.<br>
+• 2- Create a new application at [Discord Developer Portal](https://discord.com/developers/applications) and choose your application name.<br>
+• 3- Go to `Bot` section, and then make your application into a Bot.<br>
+• 4- After doing this, click on `Reset token` and then copy your Bot token. (**Do not share your bot token!**)<br>
+• 5- We go now into two categories: **Replit users** & **VSCode** (Visual Studio Code) **users**.<br>
+•• If you are using **Replit**, use `Environment Secret Variables`. (Located in your left of your screen with a Lock icon). The key is `TOKEN` and the value is going to be your bot token. And then, click on `Add new secret`. <br>
+•• If you are using **VSCode**, use `config.json` file. The value of the variable `TOKEN` is going to be your bot token. Make sure that you're not streaming or recording a video to public so users will not steal your bot token!<br>
+• 6- Go to shell of your IDE and then type `npm init -y` to setup the `package-lock.json` file. (The engine for your project from Node.JS)<br>
+• 7- Type in shell `npm install` or `npm i` to install all required packages for your project. (If you want a clean install, use: `npm ci`)<br>
+• 8- Go to shell or terminal and type `node index.js` or `node .` to start your Bot. (If you are using Replit, Click on the Green button `► Run` to start your bot)<br>
+• 9- Ready! Enjoy :)
 
-YouTube channel is linked [here](https://www.youtube.com/channel/UCs6YOMcjWMs-OMxhgaG9ttg). Subscribing is not required, only required is to enjoy your day/night :)
+# What is MongoDB?
+MongoDB is a database program, saves your data into a cluster from a Mongo URI. More info is linked [here](https://en.wikipedia.org/wiki/MongoDB).
 
-# Requirements to run this project:
-* <h3>Discord.js v14 package.</h3> <img src="https://img.shields.io/badge/discord.js-v14.1.1-blue.svg?logo=npm">
-* <h3>NodeJS version 16.9 or above.</h3> <img src="https://img.shields.io/badge/nodejs-16.16.0-green.svg">
-
-# Setup:
-* ***1-*** Create a new application at and make the application a Bot. Make sure to enable the three Gateaway intents!
-* ***2-*** Reset your bot token and copy the new token.
-* ***3-*** Now we go for two categories:
-  * If you are using *Replit*, use secret environments. The key is `TOKEN` and the value is gonna be your bot token. Then click on **Add new secret**.
-  * If you are a *VSCode* user, use config.json file in the folder config.
-* ***4***- After doing the steps above, go to shell and type `node .` or `node index.js`.
-* ***5***- Ready! Your bot should be online now.
-
-# How to update discord.js package?
-Go to shell and type `npm i discord.js@latest`. If you want a specific version, use `npm i discord.js@[version]`. (Just replace `[version]` with your specified package version.)
-
-# Why do I need MongoDB?
-MongoDB is **NOT** required, you can add it in anytime you want. By the way, Mongo is the best Database, better than Quick.DB.
-
-# So, what is the changes in Discord.js v14?
-Well, there are many changes. [Click here](https://discordjs.guide/additional-info/changes-in-v14.html#before-you-start) to understand the changes in v14.<br>The changes below are only for this project:
-
-* `MessageEmbed` constructor has been changed to `EmbedBuilder`.
-* Permissions like `SEND_MESSAGES` has been changed to `SendMessages`, `ADMINISTRATOR` to `Administrator`... etc.
-* Methods to get a user's permissions has been changed.
-* Embed colors codes has been changed. From `RED` from an example, it should be `Red`.
-* Many many changes...
-
-# Something doesn't work well here.
-Sometimes I (me, T.F.A) could do mistakes that I didn't notice them. If there is an actual error, DM me on Discord: **T.F.A#7524**.
+# Something doesn't work here...
+There are a lot of issues happens with some users. If you tried to search for a solution and didn't found it, you can send me a Friend Request on Discord using this name and tag: **T.F.A#7524**
 
 # Credits are required?
 Well, if you are forking this project and then sharing it again is **UNACCEPTABLE**. But, giving credits in commands such as ?help, ?commands... etc is **NOT** required and you can give credits in any commands if you want, only **REQUIRED** in README.md.
+
+### Contact us!
+<a href='https://www.youtube.com/c/TFA7524' target="_blank">
+    <img alt='YouTube' src='https://img.shields.io/badge/YouTube-100000?style=social&logo=YouTube&logoColor=FF0000&labelColor=000000&color=EAE9E9'/>
+</a>
+<a href='https://dsc.gg/codingdevelopment' target="_blank">
+    <img alt='Discord' src='https://img.shields.io/badge/Discord-100000?style=social&logo=Discord&logoColor=5865F2&labelColor=000000&color=EAE9E9'/>
