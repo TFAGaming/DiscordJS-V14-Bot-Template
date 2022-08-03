@@ -46,7 +46,7 @@ A Discord bot project made with the npm package discord.js version 14 and it han
 • 5- We go now into two categories: **Replit users** & **VSCode** (Visual Studio Code) **users**.<br>
 •• If you are using **Replit**, use `Environment Secret Variables`. (Located in your left of your screen with a Lock icon). The key is `TOKEN` and the value is going to be your bot token. And then, click on `Add new secret`. <br>
 •• If you are using **VSCode**, use `config.json` file. The value of the variable `TOKEN` is going to be your bot token. Make sure that you're not streaming or recording a video to public so users will not steal your bot token!<br>
-• 6- Go to shell of your IDE and then type `npm init -y` to setup the `package-lock.json` file. (The engine for your project from Node.JS)<br>
+• 6- Go to shell of your IDE and then type `npm init -y` to setup the `package-lock.json` file. (The goal of package-lock. json file is to **keep track of the exact version of every package that is installed so that a product is 100% reproducible in the same way even if packages are updated by their maintainers**.)<br>
 • 7- Type in shell `npm install` or `npm i` to install all required packages for your project. (If you want a clean install, use: `npm ci`)<br>
 • 8- Go to shell or terminal and type `node index.js` or `node .` to start your Bot. (If you are using Replit, Click on the Green button `► Run` to start your bot)<br>
 • 9- Ready! Enjoy :)
