@@ -10,5 +10,5 @@ module.exports = {
         .setDescription(`${client.ws.ping} ms!`)
     ] })
     
-  }  
-}
+  },  
+};
