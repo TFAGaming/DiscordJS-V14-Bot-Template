@@ -37,7 +37,7 @@ client.events = new Collection();
 
 module.exports = client;
 
-["prefix", "events", "mongoose"].forEach(file => {
+["prefix", "slash", "events", "mongoose"].forEach(file => {
   require(`./handlers/${file}`)(client);
 });
 
