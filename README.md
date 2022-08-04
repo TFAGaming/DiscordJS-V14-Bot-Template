@@ -60,7 +60,7 @@ There are a lot of issues happens with some users. If you tried to search for a 
 # Credits are required?
 Well, if you are forking this project and then sharing it again is **UNACCEPTABLE**. But, giving credits in commands such as ?help, ?commands... etc is **NOT** required and you can give credits in any commands if you want, only **REQUIRED** in README.md.
 
-### Contact us!
+### Contact me!
 <a href='https://www.youtube.com/c/TFA7524' target="_blank">
     <img alt='YouTube' src='https://img.shields.io/badge/YouTube-100000?style=social&logo=YouTube&logoColor=FF0000&labelColor=000000&color=EAE9E9'/>
 </a>
