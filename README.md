@@ -34,7 +34,7 @@
         <img src='https://img.shields.io/badge/MongoDB%20(v6.4.4)-100000?style=for-the-badge&logo=Mongodb&logoColor=00FF00&labelColor=000000&color=EAE9E9'/>
     </a>
     <a href="https://quickdb.js.org/">
-        <img src='<a href='https://img.shields.io/badge/Quick.DB%20(v9.0.5)-100000?style=for-the-badge&logo=sqlite&logoColor=0073FF&labelColor=000000&color=EAE9E9'>
+        <img src='https://img.shields.io/badge/Quick.DB%20(v9.0.5)-100000?style=for-the-badge&logo=sqlite&logoColor=0073FF&labelColor=000000&color=EAE9E9'>
     </a>
 </p>
 
