@@ -1,4 +1,4 @@
-const { EmbedBuilder, PermissionsBitField } = require("discord.js");
+const { EmbedBuilder, PermissionsBitField, codeBlock } = require("discord.js");
 const client = require("../../index");
 const config = require("../../config/config.json");
 const { QuickDB } = require("quick.db");
@@ -9,7 +9,7 @@ module.exports = {
 };
 
 client.on('messageCreate', async message => {
-  
+
   const prefix = await db.get(`guild_prefix_${message.guild.id}`) || config.Prefix || "?";
 
   if (message.channel.type !== 0) return;
@@ -57,6 +57,22 @@ client.on('messageCreate', async message => {
       })
     }
 
-    command.run(client, message, args, prefix, config, db);
+    if (args[0]) {
+      if (args[0].toLowerCase() === "help" || args[0].toLowerCase() === "usage") {
+        return message.reply({
+          embeds: [
+            new EmbedBuilder()
+              .setTitle("Command usage")
+              .setDescription(`${command.config.usage ? codeBlock('txt', `${prefix + command.config.usage}`) : "No usage for this command :("}`)
+          ]
+        })
+      }
+    }
+
+    try {
+      command.run(client, message, args, prefix, config, db);
+    } catch (err) {
+      console.error(err)
+    }
   }
 })
