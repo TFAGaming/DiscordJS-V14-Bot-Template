@@ -33,6 +33,7 @@ if (!AuthenticationToken) {
 
 // Handler:
 client.commands = new Collection();
+client.slashcmds = new Collection();
 client.events = new Collection();
 
 module.exports = client;
