@@ -57,18 +57,6 @@ client.on('messageCreate', async message => {
       })
     }
 
-    if (args[0]) {
-      if (args[0].toLowerCase() === "help" || args[0].toLowerCase() === "usage") {
-        return message.reply({
-          embeds: [
-            new EmbedBuilder()
-              .setTitle("Command usage")
-              .setDescription(`${command.config.usage ? codeBlock('txt', `${prefix + command.config.usage}`) : "No usage for this command :("}`)
-          ]
-        })
-      }
-    }
-
     try {
       command.run(client, message, args, prefix, config, db);
     } catch (err) {
