@@ -39,24 +39,57 @@
 </p>
 
 # DiscordJS V14 Bot Template - Introduction:
-A Discord bot project made with the npm package discord.js version 14 and it handles Prefix and Slash commands. You can create many commands as you want to improve your Bot! **Project made with ❤ by TFAGaming**.
+A Discord bot project made with the npm package discord.js version 14 and it handles Prefix and Slash commands, and it includes two Databases: MongoDB and Quick.DB! You can create many commands as you want to improve your Bot. **Project made with ❤ by T.F.A#7524.**<br>
+You can click on the star (⭐️) button above this repository if you liked this project! Thank you all. 🙏
 
-#### GitHub Repository Statistics:
-<img src="https://img.shields.io/github/forks/TFAGaming/DiscordJS-V14-Bot-Template?logo=githubactions&logoColor=success&style=social">
+<p align="center">
+<a style="font-size: 15px; font-family:verdana"><b>GitHub Repository Statistics:</b></a><br>
+    <img src="https://img.shields.io/github/forks/TFAGaming/DiscordJS-V14-Bot-Template?logo=githubactions&logoColor=success&style=social">
 <img src="https://img.shields.io/github/stars/TFAGaming/DiscordJS-V14-Bot-Template?label=Stars&logo=ReverbNation&&logoColor=yellow&style=social">
+</p>
 
 # How to setup:
-• 1- Choose a good IDE to start working on your Bot (*Recommended for Hosting 24/7: Replit*), and then Download/fork this project.<br>
-• 2- Create a new application at [Discord Developer Portal](https://discord.com/developers/applications) and choose your application name.<br>
-• 3- Go to `Bot` section, and then make your application into a Bot.<br>
-• 4- After doing this, click on `Reset token` and then copy your Bot token. (**Do not share your bot token!**)<br>
-• 5- We go now into two categories: **Replit users** & **VSCode** (Visual Studio Code) **users**.<br>
-•• If you are using **Replit**, use `Environment Secret Variables`. (Located in your left of your screen with a Lock icon). The key is `TOKEN` and the value is going to be your bot token. And then, click on `Add new secret`. <br>
-•• If you are using **VSCode**, use `config.json` file. The value of the variable `TOKEN` is going to be your bot token. Make sure that you're not streaming or recording a video to public so users will not steal your bot token!<br>
-• 6- Go to shell of your IDE and then type `npm init -y` to setup the `package-lock.json` file.<br>
-• 7- Type in shell `npm install` or `npm i` to install all required packages for your project. (If you want a clean install, use: `npm ci`)<br>
-• 8- Go to shell or terminal and type `node index.js` or `node .` to start your Bot. (If you are using Replit, Click on the Green button `► Run` to start your bot)<br>
-• 9- Ready! Enjoy :)
+### - Creating a new client:
+
+• 1- Go to [Discord Developer Portal](https://discord.com/developers) and then go to `Applications.` <br>
+• 2- Create a new application choose it's name. <br>
+• 3- Choose your application's avatar (not required).<br>
+• 4- Go to `Bot` section and turn your application into a bot. <br>
+• 5- Scroll down and enable the three disabled `Privileged Gateaway Intents` intents (`PRESENCE INTENT`, `SERVER MEMBERS INTENT`, and `MESSAGE CONTENT INTENT`). Here's a picture below:<br>
+<img src="https://media.discordapp.net/attachments/1006491186875338823/1006494083063238737/2022-08-09_10_27_23-Discord_Developer_Portal_My_Applications.png?width=806&height=559">
+
+### - Setup your project on ___Visual Studio Code___:
+• 1- Download [Visual Studio Code](https://code.visualstudio.com/Download).<br>
+• 2- Download [Node.JS](https://nodejs.org/en/) version **above** 16.9.0..<br>
+• 3- Download the project (`.zip` folder) by clicking on this badge button above this guide:<br>
+<img src="https://media.discordapp.net/attachments/1006491186875338823/1006494765812031640/2022-08-09_10_29_26-Markdown_Live_Preview.png"><br>
+• 4- Drop the .zip folder into your Desktop, right click on the .zip folder and click on `Extract here`.<br>
+• 5- After extracting the files into a new folder, delete the .zip folder and rename the created folder into any name you want.<br>
+• 6- Open Visual Studio Code, click on `Open folder` and choose the created folder.<br>
+• 7- Now go back to Discord Developer Portal site, copy your bot token, go back to VSCode, and paste your bot token in `config/config.json` file in the variable `TOKEN`. Now go back again to Discord Developer Portal site, copy your client's ID, go back to VSCode, and paste your bot ID in the variable `ID`. Go to your Discord app, copy your server ID, go to VSCode and paste your server ID in `GUILD_ID` variable.<br>
+<img src="https://media.discordapp.net/attachments/1006491186875338823/1006498034684801114/2022-08-09_10_42_30-config.json_-_UptimerBot_-_Visual_Studio_Code.png"><br>
+• 8- Go to terminal and type `npm init -y`.<br>
+• 9- Go to terminal again and type `npm i` or `npm install`.<br>
+• 10- Press `F5` and choose `Node.JS` to start running your bot.<br>
+• 11- Enjoy! =)
+
+```arm
+Warning: VSCode doesnt host Discord bots 24/7. You need to use Heroku or other hoster applications to host your bot(s) forever.
+```
+
+### - Setup your project on ___Repl.it___:
+• 1- Go to [Replit](https://www.replit.com) site and register a new account (If you are new on the site).<br>
+• 2- Fork the project by clicking on this badge button above this guide:<br>
+<img src="https://media.discordapp.net/attachments/1006491186875338823/1006500207871152168/2022-08-09_10_51_47-Markdown_Live_Preview.png"><br>
+• 3- Click on `Import from GitHub`.<br>
+• 4- Type `node index.js` or `node .` in the Run button configuration, and then press `Done`.<br>
+<img src="https://media.discordapp.net/attachments/1006491186875338823/1006501072719855666/2022-08-09_10_55_10-README.md_-_DiscordJS-V14-Bot-Template_-_Replit.png"><br>
+
+• 5- Go to Discord Developers Portal, copy your bot token, go back to your Replit project. Follow this picture below:<br>
+<img src="https://media.discordapp.net/attachments/1006491186875338823/1006502913834758224/2022-08-09_10_58_14-index.js_-_DiscordJS-V14-Bot-Template_-_Replit.png"><br>
+
+• 6- Click on the green run button `► Run` to start your bot.<br>
+• 7- Enjoy! =)<br>
 
 # What is MongoDB and Quick.db?
 MongoDB is a database program. You can save some documents, data, and more! The official site of MongoDB is linked [here](https://www.mongodb.com/).<br>
