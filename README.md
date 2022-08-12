@@ -25,7 +25,7 @@
     <a href="https://replit.com/github/TFAGaming/DiscordJS-V14-Bot-Template">
         <img src="https://img.shields.io/badge/Repl.it-100000?label=Fork%20on:&style=flat&logo=replit&color=808080&logoColor=white">
     </a>
-    <a href="https://replit.com/github/TFAGaming/DiscordJS-V14-Bot-Template">
+    <a href="https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/releases">
         <img src="https://img.shields.io/badge/Visual Studio Code-100000?label=Download%20for:&style=flat&logo=visual studio code&color=808080&logoColor=007ACC">
     </a>
 </p>
