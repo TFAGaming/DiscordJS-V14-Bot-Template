@@ -24,7 +24,7 @@ client.on('messageCreate', async message => {
 
   let command = client.commands.get(cmd);
 
-  if (!command) return message.reply("Invalid command, try again?");
+  if (!command) return;
 
   if (command) {
     if (command.permissions) {
@@ -35,7 +35,7 @@ client.on('messageCreate', async message => {
             .setColor("Red")
         ]
       })
-    }
+    };
 
     if (command.owner, command.owner == true) {
       if (!config.Users.OWNERS) return;
@@ -46,7 +46,7 @@ client.on('messageCreate', async message => {
         const fetchedUser = message.guild.members.cache.get(user);
         if (!fetchedUser) return allowedUsers.push('*Unknown User#0000*');
         allowedUsers.push(`${fetchedUser.user.tag}`);
-      });
+      })
 
       if (!config.Users.OWNERS.some(ID => message.member.id.includes(ID))) return message.reply({
         embeds: [
@@ -55,12 +55,12 @@ client.on('messageCreate', async message => {
             .setColor("Red")
         ]
       })
-    }
+    };
 
     try {
       command.run(client, message, args, prefix, config, db);
-    } catch (err) {
-      console.error(err)
-    }
+    } catch (error) {
+      console.error(error);
+    };
   }
 })
