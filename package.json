@@ -4,7 +4,7 @@
   "description": "A Discord Bot template built by T.F.A#7524!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "T.F.A#7524",
