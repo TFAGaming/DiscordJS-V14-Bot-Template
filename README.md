@@ -65,7 +65,7 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 • 10- To start Debugging, Go to the file index.js, press F5, and then choose the debugger `Node.js`. Else, go to terminal, and then type `node index.js`, `node .`, or `npm run start`.<br>
 • 11- Enjoy =)
 
-⚠️ **Visual Studio Code isn't an app for hosting Discord bots or other apps 24/7, you need to choose Heroku, Discloud, Replit, or other apps for hosting to host your Discord bot(s) forever.**
+⚠️ **NOTE:** Visual Studio Code isn't an app for hosting Discord bots or other apps 24/7, you need to choose Heroku, Discloud, Replit, or other apps for hosting to host your Discord bot(s) forever.
 
 ### - Setup your project on ___Repl.it___:
 • 1- Go to [Replit](https://www.replit.com) site and register a new account (If you are new on the site).<br>
@@ -73,9 +73,9 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 <img src="https://media.discordapp.net/attachments/1006491186875338823/1006500207871152168/2022-08-09_10_51_47-Markdown_Live_Preview.png"><br>
 • 3- Click on `Import from GitHub` and wait for Replit to import the repository to your project.<br>
 • 4- Type `node index.js`, `node .`, or `npm run start` in the Run button configuration, and then press `Done`.<br>
-• 5- Go tothe folder `config`, and then the file `config.json`. Fill or change the values of the variables as you want.
+• 5- Go to the folder `config`, and then the file `config.json`. Fill or change the values of the variables as you want.
 
-⚠️ **Make sure to not use the variables `TOKEN` or `MONGO` in Replit! Attackers can steal these secrets and they will destroy your Database or your Bot(s). Follow the step #6 to keep these secrets in a safe place.**
+⚠️ **WARNING:** Make sure to not use the variables `TOKEN` or `MONGO` in the file config.json! Attackers **can steal** these secrets and they **can destroy** your Database and/or your Bot(s). Follow the step #6 to keep these secrets in a safe place.
 
 • 6- Go to `Envrionment Secret Variables` (Located at your left screen with a 🔒 icon). This feature from Replit avoid attackers from accessing your secrets. Use the key as a variable, and the value is the variable's value. The key for your bot token is always `TOKEN`, and for your Mongo URI, it's `MONGO`. Here's a picture below:<br>
 <img src="https://media.discordapp.net/attachments/1006491186875338823/1007611370084253767/2022-08-12_12_25_43-index.js_-_Discord_Bot_Template_DJS_V14_-_Replit.png"> <br>
@@ -84,7 +84,7 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 
 # What is MongoDB and Quick.db?
 MongoDB is a database program. You can save some documents, data, and more! The official site of MongoDB is linked [here](https://www.mongodb.com/).<br>
-Quick.db is also a database program, more simplified than MongoDB but doesn't have a lot features. Quick.db uses SQlite files to save data, but MongoDB uses clusters (or Mongo URI) to save data. You cab get more information about these both databases in Google.
+Quick.db is also a database program, more simplified than MongoDB but doesn't have a lot features. Quick.db uses SQlite files to save data, but MongoDB uses clusters (or Mongo URI) to save data. You can get more information about these both databases in Google.
 
 # Something doesn't work here...
 There are a lot of issues happens with some users. You can create an issue on this repository and I will respond to your opened issue(s) as fast as possible. I'm always busy, so please wait for me to respond to your issues.
