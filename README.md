@@ -18,14 +18,17 @@
         <img src="https://img.shields.io/discord/918611797194465280.svg?label=Discord%20Server:&logo=discord&color=5865F2&logoColor=white"><br>
     </a>
     <a style="font-size:15px;font-family:verdana"><b>Language:</b></a><br>
-    <img src="https://img.shields.io/badge/JavaScript-100000?label=Made%20with:&style=flat&logo=javascript&color=808080">
+    <img src="https://img.shields.io/badge/JavaScript-100000?label=Made%20with:&style=flat&logo=javascript&color=yellow">
     <br>
     <a style="font-size:15px;font-family:verdana"><b>Fork/Download For:</b></a><br>
     <a href="https://replit.com/github/TFAGaming/DiscordJS-V14-Bot-Template">
         <img src="https://img.shields.io/badge/Repl.it-100000?label=Fork%20on:&style=flat&logo=replit&color=808080&logoColor=white">
     </a>
     <a href="https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/releases">
-        <img src="https://img.shields.io/badge/Visual Studio Code-100000?label=Download%20for:&style=flat&logo=visual studio code&color=808080&logoColor=007ACC">
+        <img src="https://img.shields.io/badge/Visual Studio Code-100000?label=Download%20for:&style=flat&logo=visual studio code&color=blue&logoColor=007ACC">
+    </a>
+    <a href="https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/fork">
+        <img src="https://img.shields.io/badge/GitHub-100000?label=Fork%20on:&style=flat&logo=github&color=808080">
     </a>
 </p>
 
