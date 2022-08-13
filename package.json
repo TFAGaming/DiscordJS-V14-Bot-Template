@@ -1,6 +1,6 @@
 {
-  "name": "DiscordJS-V14-Bot-Template",
-  "version": "3.0.0",
+  "name": "discordjs-v14-bot-template",
+  "version": "14.0.0",
   "description": "A Discord Bot template built by T.F.A#7524!",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "better-sqlite3": "^7.6.2",
     "colors": "^1.4.0",
     "discord-api-types": "^0.36.2",
-    "discord.js": "^14.1.1",
+    "discord.js": "^14.2.0",
     "mongoose": "^6.4.4",
     "node-fetch": "^2.6.7",
     "quick.db": "^9.0.5"
