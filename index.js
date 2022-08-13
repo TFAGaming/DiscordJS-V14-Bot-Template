@@ -18,11 +18,18 @@ const client = new Client({
     Partials.User,
     Partials.GuildMember,
     Partials.Reaction
-  ]
+  ],
+  presence: {
+    activities: [{
+      name: "T.F.A is cool!",
+      type: 0
+    }],
+    status: 'dnd'
+  }
 });
 
 // Host the bot:
-require('http').createServer((req, res) => res.end('Ready.')).listen(3000)
+require('http').createServer((req, res) => res.end('Ready.')).listen(3000);
 
 // Getting the bot token:
 const AuthenticationToken = process.env.TOKEN || config.Client.TOKEN;
@@ -45,12 +52,13 @@ module.exports = client;
 // Login to the bot:
 client.login(AuthenticationToken)
   .catch((err) => {
-    console.warn("[CRASH] Something went wrong while connecting to your bot..." + "\n");
-    console.warn("[CRASH] Error from Discord API:" + err);
+    console.error("[CRASH] Something went wrong while connecting to your bot..." + "\n");
+    console.error("[CRASH] Error from Discord API:" + err);
     process.exit();
   });
 
 // Handle errors:
-process.on('unhandledRejection', async (err) => {
-  console.log(`[ANTI-CRASH] Unhandled Rejection: ${err}`.red)
+process.on('unhandledRejection', async (err, promise) => {
+  console.error(`[ANTI-CRASH] Unhandled Rejection: ${err}`.red):
+  console.error(promise)
 })
