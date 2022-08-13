@@ -1,8 +1,8 @@
 <br>
 <p align="center">
     <img src="https://media.discordapp.net/attachments/994957246364647526/1004352503573393458/V14_Handler.png?width=855&height=481">
-    <img src="https://img.shields.io/github/v/release/discordjs/discord.js?label=Discord.js Current Version:&logo=npm&style=for-the-badge">
-    <a style="font-size:13px;font-family:verdana"><b>Update the package: `npm i discord.js@latest`</b></a><br>
+    <img src="https://img.shields.io/github/v/release/discordjs/discord.js?label=Discord.js Current Version:&logo=npm&style=for-the-badge"><br>
+    <a style="font-size:13px;font-family:verdana">Update the package: `npm i discord.js@latest`</a><br>
 </p>
 
 <p align="center">
