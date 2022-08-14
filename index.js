@@ -59,6 +59,6 @@ client.login(AuthenticationToken)
 
 // Handle errors:
 process.on('unhandledRejection', async (err, promise) => {
-  console.error(`[ANTI-CRASH] Unhandled Rejection: ${err}`.red):
-  console.error(promise)
-})
+  console.error(`[ANTI-CRASH] Unhandled Rejection: ${err}`.red);
+  console.error(promise);
+});
