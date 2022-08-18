@@ -55,8 +55,7 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 • 2- Download [Node.JS](https://nodejs.org/en/download/) (check the requirements).<br>
 • 3- Open Visual Studio Code, go to Extensions section and install a JavaScript runner. I choosed **JavaScript (ES6) code snippets**.<br>
 • 4- Download the project by clicking on the badge above this guide `Download For: Visual Studio Code`. If you are using Chrome right now, you should see below that the download has started. <br>
-<img src="https://media.discordapp.net/attachments/1006491186875338823/1008094405841932379/2022-08-13_20_26_18-Window.png"><br>
-• 5- Drop the .zip folder into your Desktop, right click on the .zip folder and click on `Extract here`.<br>
+• 5- After finishing the download, drop the .zip folder into your Desktop, right click on the .zip folder and click on `Extract here`.<br>
 • 6- After extracting the files into a new folder, delete the .zip folder and rename the created folder into any name you want (not important to rename the folder).<br>
 • 7- Open Visual Studio Code, click on `Open folder` and choose the created folder to start a new project.<br>
 • 8- Go to the folder `config`, and then the file `config.json`. Fill or change the values of the variables as you want. Here's the config.json code below, replace for an example `YOUR BOT PREFIX` to `?` or `!`... etc.<br>
