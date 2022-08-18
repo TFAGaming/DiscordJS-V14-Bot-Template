@@ -22,7 +22,7 @@
     <a href="https://replit.com/github/TFAGaming/DiscordJS-V14-Bot-Template">
         <img src="https://img.shields.io/badge/Repl.it-100000?label=Fork%20on:&style=flat&logo=replit&color=808080&logoColor=white">
     </a>
-    <a href="https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/releases">
+    <a href="https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/archive/refs/heads/main.zip">
         <img src="https://img.shields.io/badge/Visual Studio Code-100000?label=Download%20for:&style=flat&logo=visual studio code&color=blue&logoColor=007ACC">
     </a>
     <a href="https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/fork">
@@ -54,7 +54,7 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 • 1- Download [Visual Studio Code](https://code.visualstudio.com/Download).<br>
 • 2- Download [Node.JS](https://nodejs.org/en/download/) (check the requirements).<br>
 • 3- Open Visual Studio Code, go to Extensions section and install a JavaScript runner. I choosed **JavaScript (ES6) code snippets**.<br>
-• 4- Download the project by clicking on the badge above this guide `Download For: Visual Studio Code`. Go to the latest version, scroll to `Assets`, and download the `Source Code (.zip)` folder. <br>
+• 4- Download the project by clicking on the badge above this guide `Download For: Visual Studio Code`. If you are using Chrome right now, you should see below that the download has started. <br>
 <img src="https://media.discordapp.net/attachments/1006491186875338823/1008094405841932379/2022-08-13_20_26_18-Window.png"><br>
 • 5- Drop the .zip folder into your Desktop, right click on the .zip folder and click on `Extract here`.<br>
 • 6- After extracting the files into a new folder, delete the .zip folder and rename the created folder into any name you want (not important to rename the folder).<br>
@@ -80,8 +80,6 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 }
 ```
 
-> ⚠️ **WARNING:** Remember to provide your bot token, your database Mongo URI and your client ID! Else, the project won't work. Also make sure to not share these secrets! (except client ID, because... not an important secret.)
-
 • 9- Go to terminal and type `npm init -y` to install `package-lock.json` file, and then type in the terminal again `npm install` to install all the required dependencies to run your project.<br>
 • 10- To start Debugging, Go to the file index.js, press F5, and then choose the debugger `Node.js`. Else, go to terminal, and then type `node index.js`, `node .`, or `npm run start`.<br>
 • 11- Enjoy! =)
@@ -95,41 +93,12 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 
 > ⚠️ **WARNING:** Make sure to not use the variables `TOKEN` or `MONGO` in the file config.json! Attackers can steal these secrets and they can steal and use your Database, also use your bot(s) without asking your permissions!. **Follow the step #6 to keep these secrets in a safe place.**
 
-• 6- Go to `Environment Secret Variables` (Located at your left screen with a 🔒 icon). This feature from Replit avoid attackers from accessing your secrets. Use the key as a variable, and the value is the variable's value. The key for your bot token is`TOKEN`, and the key for your Mongo URI is `MONGO`. After finishing this, click on `Add new secret`.<br>
+• 6- Go to `Environment Secret Variables` (Located at your left screen with a 🔒 icon). This feature from Replit avoid attackers from accessing your secrets. Use the key as a variable, and the value is the variable's value. The key for your bot token is `TOKEN`, and the key for your Mongo URI is `MONGO`. After finishing this, click on `Add new secret`.<br>
 • 7- Click on the green button on top of your screen `► Run` to start running your project.<br>
 • 8- Enjoy! =)
 
-# Bot Presence:
-Go to index.js and you need to find this code:
-```js
-presence: {
-  activities: [{
-    name: "T.F.A is cool!",
-    type: 0
-  }],
-  status: 'dnd'
-} 
-```
-This code is for client's activity and status. You can change the values by reading this table below:
-
-##### Activity Types:
-|ID | Name | Preview |
-|---| --- |--- |
-| **0** | Game | Playing {text} |
-| **1** | Streaming | Streaming {text} |
-| **2** | Listening | Listening to {text} |
-| **3** | Watching | Watching {text} | 
-| **4** | Custom |{emoji} {text} |
-| **5** | Competing | Competing in {text} |
-
-##### Status Types:
-| Name | Full Name |
-| --- | --- |
-| **online** | Online |
-| **dnd** | Do not Disturb |
-| **idle** | Idle |
-| **invisible** | Offline |
-
+# Update discord.js package version:
+Go to shell or terminal and type `npm i discord.js@latest`.
 
 # What is MongoDB and Quick.db?
 MongoDB is a database program. You can save some documents, data, and more! The official site of MongoDB is linked [here](https://www.mongodb.com/).<br>
@@ -147,3 +116,4 @@ Forking this repository and sharing it again without giving credits to me (T.F.A
 </a>
 <a href='https://dsc.gg/codingdevelopment' target="_blank">
     <img alt='Discord' src='https://img.shields.io/badge/Discord-100000?style=social&logo=Discord&logoColor=5865F2&labelColor=000000&color=EAE9E9'/>
+</a>
