@@ -40,7 +40,7 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 ### - Requirements:
 
 • **Node.js v16.9.0 or above.** <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/v16.9.0-100000?style=flat&logo=node.js&label=Node.js&color=blue&logoColor=lime"></a><br>
-• **Discord.js v14.1.0 or above**. <a href="https://www.npmjs.com/package/discord.js"><img src="https://img.shields.io/badge/v14.1.0-100000?style=flat&logo=npm&label=Discord.js&color=blue"></a>
+• **Discord.js v14.3.0 or above**. <a href="https://www.npmjs.com/package/discord.js"><img src="https://img.shields.io/badge/v14.3.0-100000?style=flat&logo=npm&label=Discord.js&color=blue"></a>
 
 ### - Creating a new client and inviting the bot:
 • 1- Go to [Discord Developer Portal](https://discord.com/developers) and then go to `Applications`. <br>
