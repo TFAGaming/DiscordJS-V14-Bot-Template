@@ -28,6 +28,9 @@
     <a href="https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/fork">
         <img src="https://img.shields.io/badge/GitHub-100000?label=Fork%20on:&style=flat&logo=github&color=808080">
     </a>
+    <a href="https://www.youtube.com/watch?v=dGyzjW9Ld4U&t=175s&ab_channel=T.F.A7524">
+	<img src="https://img.shields.io/badge/YouTube-100000?logo=youtube&logoColor=ff0000&label=Tutorial%20on:">
+    </a>
 </p>
 
 # DiscordJS V14 Bot Template - Introduction:
