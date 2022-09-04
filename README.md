@@ -1,23 +1,20 @@
 <p align="center">
-	<img src="https://media.discordapp.net/attachments/1006491186875338823/1008090193389162546/V14_Handler_2.png?width=960&height=540" height="200" style="float: left; margin: 0px 10px 15px 1px;"/> <a style="font-size: 20px"> <a style="font-size: 30px"><br>
-	<img src="https://img.shields.io/github/v/release/discordjs/discord.js?label=Discord.js Current Version:&logo=npm&style=for-the-badge">
+	<img src="https://github-readme-stats.vercel.app/api/pin/?username=TFAGaming&repo=DiscordJS-V14-Bot-Template&theme=dark" style="float: left; margin: 0px 10px 15px 1px;"/> <a style="font-size: 20px"> <a style="font-size: 30px">
 </p>
 
 <p align="center">
     <a style="font-size:15px;font-family:verdana"><b>GitHub Repository Statistics/Info:</b></a><br>
-    <img src="https://img.shields.io/github/release/TFAGaming/DiscordJS-V14-Bot-Template?label=Release&logo=files">
-    <img src="https://img.shields.io/github/forks/TFAGaming/DiscordJS-V14-Bot-Template?label=Forks&color=lime&logo=githubactions&logoColor=lime">
-    <img src="https://img.shields.io/github/stars/TFAGaming/DiscordJS-V14-Bot-Template?label=Stars&color=yellow&logo=reverbnation&logoColor=yellow">
-    <img src="https://img.shields.io/github/license/TFAGaming/DiscordJS-V14-Bot-Template?label=License&color=808080&logo=gitbook&logoColor=808080">
-    <img src="https://img.shields.io/github/issues/TFAGaming/DiscordJS-V14-Bot-Template?label=Issues&color=red&logo=ifixit&logoColor=red">
+    <img src="https://img.shields.io/github/release/TFAGaming/DiscordJS-V14-Bot-Template?label=Last%20Release">
+    <!--<img src="https://img.shields.io/github/forks/TFAGaming/DiscordJS-V14-Bot-Template?label=Forks&color=32CD32">
+    <img src="https://img.shields.io/github/stars/TFAGaming/DiscordJS-V14-Bot-Template?label=Stars&color=yellow"  -->
+     <img src="https://img.shields.io/github/license/TFAGaming/DiscordJS-V14-Bot-Template?label=License&color=808080">
+    <img src="https://img.shields.io/github/issues/TFAGaming/DiscordJS-V14-Bot-Template?label=Issues&color=yellow">
+    <img src="https://img.shields.io/github/issues-closed/TFAGaming/DiscordJS-V14-Bot-Template?label=Issues%20Closed&color=32CD32">
     <br>
     <a style="font-size:15px;font-family:verdana"><b>Discord Server:</b></a><br>
     <a href="https://discord.gg/bGNRZcnwWy">
         <img src="https://img.shields.io/discord/918611797194465280.svg?label=Discord%20Server:&logo=discord&color=5865F2"><br>
     </a>
-    <a style="font-size:15px;font-family:verdana"><b>Language:</b></a><br>
-    <img src="https://img.shields.io/badge/JavaScript-100000?label=Made%20with:&style=flat&logo=javascript&color=yellow">
-    <br>
     <a style="font-size:15px;font-family:verdana"><b>Fork/Download For:</b></a><br>
     <a href="https://replit.com/github/TFAGaming/DiscordJS-V14-Bot-Template">
         <img src="https://img.shields.io/badge/Repl.it-100000?label=Fork%20on:&style=flat&logo=replit&color=808080&logoColor=white">
@@ -101,7 +98,9 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 • 8- Enjoy! =)
 
 # Update discord.js package version:
-Go to shell or terminal and type `npm i discord.js@latest`.
+Go to shell or terminal and type `npm i discord.js@latest`. <img src="https://img.shields.io/github/v/release/discordjs/discord.js?label=Discord.js Current Version:&logo=npm">
+
+> ⚠️ **NOTE:** Using `npm i discord.js@13` or versions under v14 won't work with this project.
 
 # What is MongoDB and Quick.db?
 MongoDB is a database program. You can save some documents, data, and more! The official site of MongoDB is linked [here](https://www.mongodb.com/).<br>
