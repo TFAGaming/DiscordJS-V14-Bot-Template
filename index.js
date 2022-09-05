@@ -1,5 +1,5 @@
 const { Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
-const config = require('./config/config.json');
+const config = require('./config/config');
 const colors = require("colors");
 
 // Creating a new client:
@@ -34,27 +34,28 @@ require('http').createServer((req, res) => res.end('Ready.')).listen(3000);
 // Getting the bot token:
 const AuthenticationToken = process.env.TOKEN || config.Client.TOKEN;
 if (!AuthenticationToken) {
-  console.warn("[CRASH] Authentication Token for Discord bot is required! Use Envrionment Secrets or config.json.".red + "\n")
+  console.warn("[CRASH] Authentication Token for Discord bot is required! Use Envrionment Secrets or config.js.".red)
   return process.exit();
 };
 
 // Handler:
-client.commands = new Collection();
-client.slashcmds = new Collection();
+client.prefix_commands = new Collection();
+client.slash_commands = new Collection();
+client.user_commands = new Collection();
 client.events = new Collection();
 
 module.exports = client;
 
-["prefix", "slash", "events", "mongoose"].forEach(file => {
-  require(`./handlers/${file}`)(client);
+["prefix", "application_commands", "events", "mongoose"].forEach((file) => {
+  require(`./handlers/${file}`)(client, config);
 });
 
 // Login to the bot:
 client.login(AuthenticationToken)
   .catch((err) => {
-    console.error("[CRASH] Something went wrong while connecting to your bot..." + "\n");
+    console.error("[CRASH] Something went wrong while connecting to your bot...");
     console.error("[CRASH] Error from Discord API:" + err);
-    process.exit();
+    return process.exit();
   });
 
 // Handle errors:
