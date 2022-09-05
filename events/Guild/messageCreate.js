@@ -1,6 +1,6 @@
 const { EmbedBuilder, PermissionsBitField, codeBlock } = require("discord.js");
 const client = require("../../index");
-const config = require("../../config/config.json");
+const config = require("../../config/config.js");
 const { QuickDB } = require("quick.db");
 const db = new QuickDB();
 
@@ -22,7 +22,7 @@ client.on('messageCreate', async message => {
   const cmd = args.shift().toLowerCase();
   if (cmd.length == 0) return;
 
-  let command = client.commands.get(cmd);
+  let command = client.prefix_commands.get(cmd);
 
   if (!command) return;
 
@@ -63,4 +63,4 @@ client.on('messageCreate', async message => {
       console.error(error);
     };
   }
-})
+});
