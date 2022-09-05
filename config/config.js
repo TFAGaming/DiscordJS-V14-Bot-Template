@@ -1,18 +1,18 @@
 module.exports = {
 
-  Prefix: "?",
+  Prefix: "?", // YOUR BOT PREFIX.
 
   Users: {
-    OWNERS: ["849413565487382578", "554029264492691476"]
+    OWNERS: ["849413565487382578", "554029264492691476"] // THE BOT OWNERS ID.
   },
 
   Handlers: {
-    MONGO: ""
+    MONGO: "" // YOUR MONGO URI. (USE THIS ONLY IN VSCODE)
   },
 
   Client: {
-    TOKEN: "OTI3MjI2Nzg3MTc0NDE2NDY0.GEoC3P.NLaD33LWEmbR-dKQFuyxgUePwOhmVdrz0Ilm8k",
-    ID: "927226787174416464"
+    TOKEN: "", // YOUR BOT TOKEN. (USE THIS ONLY IN VSCODE)
+    ID: "" // YOUR BOT ID.
   }
 
 }
