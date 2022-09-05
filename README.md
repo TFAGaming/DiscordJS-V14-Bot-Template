@@ -37,6 +37,16 @@ You can click on the star (⭐️) button above this repository if you liked thi
 
 Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.js/main/general/welcome).
 
+# Project Features:
+### Prefix commands!
+<img src="https://media.discordapp.net/attachments/1006491186875338823/1016288782561054740/2022-09-05_11_08_23-Window.png">
+
+### Slash commands!
+<img src="https://media.discordapp.net/attachments/1006491186875338823/1016288782368112660/2022-09-05_11_07_58-Window.png">
+
+### User commands!
+<img src="https://media.discordapp.net/attachments/1006491186875338823/1016288782040965161/2022-09-05_11_07_46-Window.png">
+
 # How to setup:
 ### - Requirements:
 
@@ -53,34 +63,35 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 
 ### - Setup your project on ___Visual Studio Code___:
 • 1- Download [Visual Studio Code](https://code.visualstudio.com/Download).<br>
-• 2- Download [Node.JS](https://nodejs.org/en/download/) (check the requirements).<br>
+• 2- Download [Node.JS](https://nodejs.org/en/download/) (Check the requirements).<br>
 • 3- Open Visual Studio Code, go to Extensions section and install a JavaScript runner. I choosed **JavaScript (ES6) code snippets**.<br>
 • 4- Download the project by clicking on the badge above this guide `Download For: Visual Studio Code`. If you are using Chrome right now, you should see below that the download has started. <br>
 • 5- After finishing the download, drop the .zip folder into your Desktop, right click on the .zip folder and click on `Extract here`.<br>
 • 6- After extracting the files into a new folder, delete the .zip folder and rename the created folder into any name you want (not important to rename the folder).<br>
 • 7- Open Visual Studio Code, click on `Open folder` and choose the created folder to start a new project.<br>
-• 8- Go to the folder `config`, and then the file `config.json`. Fill or change the values of the variables as you want. Here's the config.json code below, replace for an example `YOUR BOT PREFIX` to `?` or `!`... etc.<br>
-```json
-{
-  "Prefix": "YOUR BOT PREFIX",
+• 8- Go to the folder `config`, and then the file `config.js`. Fill or change the values of the variables as you want. Here's the config.js code below and a small guide:
+```js
+module.exports = {
 
-  "Users": {
-    "OWNERS": ["YOUR ACCOUNT ID", "ANOTHER ACCOUNT ID", "AND MORE!"]
+  Prefix: "?", // YOUR BOT PREFIX.
+
+  Users: {
+    OWNERS: ["849413565487382578", "554029264492691476"] // THE BOT OWNERS ID.
   },
 
-  "Handlers": {
-    "MONGO": "YOUR DATABASE MONGO URI",
-    "GUILD_ID": "YOUR SERVER ID WHERE THE BOT IS INVITED IN"
+  Handlers: {
+    MONGO: "" // YOUR MONGO URI. (USE THIS ONLY IN VSCODE)
   },
-  
-  "Client": {
-    "TOKEN": "YOUR BOT TOKEN",
-    "ID": "YOUR BOT ID"
+
+  Client: {
+    TOKEN: "", // YOUR BOT TOKEN. (USE THIS ONLY IN VSCODE)
+    ID: "" // YOUR BOT ID.
   }
+
 }
 ```
 
-• 9- Go to terminal and type `npm init -y` to install `package-lock.json` file, and then type in the terminal again `npm install` to install all the required dependencies to run your project.<br>
+• 9- Go to terminal and type `npm init -y` to install `package-lock.json` file, and then type in the terminal again `npm install` or `npm i` to install all the required dependencies to run your project.<br>
 • 10- To start Debugging, Go to the file index.js, press F5, and then choose the debugger `Node.js`. Else, go to terminal, and then type `node index.js`, `node .`, or `npm run start`.<br>
 • 11- Enjoy! =)
 
@@ -89,7 +100,7 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 • 2- Fork the project by clicking on the badge above this guide `Fork For: Replit`.<br>
 • 3- Click on `Import from GitHub` and wait for Replit to import the repository to your project.<br>
 • 4- Type `node index.js`, `node .`, or `npm run start` in the Run button configuration, and then press `Done`.<br>
-• 5- Go to the folder `config`, and then the file `config.json`. Fill or change the values of the variables as you want.
+• 5- Go to the folder `config`, and then the file `config.js`. Fill or change the values of the variables as you want.
 
 > ⚠️ **WARNING:** Make sure to not use the variables `TOKEN` or `MONGO` in the file config.json! Attackers can steal these secrets and they can steal and use your Database, also use your bot(s) without asking your permissions!. **Follow the step #6 to keep these secrets in a safe place.**
 
@@ -97,10 +108,106 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 • 7- Click on the green button on top of your screen `► Run` to start running your project.<br>
 • 8- Enjoy! =)
 
-# Update discord.js package version:
-Go to shell or terminal and type `npm i discord.js@latest`. <img src="https://img.shields.io/github/v/release/discordjs/discord.js?label=Discord.js Current Version:&logo=npm">
+# Slash commands:
+### Creating options:
+This table is also located at official Discord Developer portal: [Click here](https://discord.com/developers/docs/interactions/application-commands#application-command-object)
+Creating options should be an Array, here's an example:
+```js
+options: [
+	{
+		name: "text",
+		description: "write anything you want!",
+		type: 3,
+		required: false
+	}
+]
+```
+> ⚠️ **WARNING:** The name of any option should be in lower case.
 
-> ⚠️ **NOTE:** Using `npm i discord.js@13` or versions under v14 won't work with this project.
+> ⚠️ **WARNING:** All the required options (`required = true`) should be the first options, and then the not required options.
+
+We used the type `3` for the **String** option. There are other option types:
+| Name: | Value: |
+| ----- | ------ |
+| STRING | 3 |
+| INTEGER | 4 |
+| BOOLEAN | 5 |
+| USER | 6 |
+| CHANNEL | 7 |
+| ROLE | 8 |
+| MENTIONABLE | 9 |
+| NUMBER | 10 |
+| ATTACHMENT | 11 |
+
+### Getting an option's value:
+```js
+const a = interaction.options.get('YOUR OPTION NAME').value;
+```
+### Choices:
+```js
+options: [
+	{
+		name: "choice",
+		description: "Choose something!",
+		type: 3,
+		required: true,
+		choices: [
+			{
+				name: "Choice #1",
+				value: "1"
+			},
+			{
+				name: "Choice #2",
+				value: "2"
+			}
+		]
+	}
+]
+```
+
+> ⚠️  **WARNING:** Choices should be in the option type **string** (3).
+### Sub commands:
+Sub commands type is always `1`. You can add more options in a option if you are using the sub command type.
+```js
+options: [
+	{
+		name: "sub",
+		description: "A sub command",
+		type: 1,
+		options: [
+			{
+				name: "text",
+				description: "Write anything you want!",
+				type: 3,
+				required: true
+			}
+		]
+	},
+	{
+		name: "sub-2",
+		description: "Sub command 2",
+		type: 1,
+		options: [
+			{
+				name: "text",
+				description: "Write anything you want!",
+				type: 3,
+				required: true
+			}
+		]
+	}
+]
+```
+### Getting a Sub command's value:
+```js
+const sub = interaction.options.getSubcommand();
+
+if (sub === "sub") {
+	// Your code for the sub command #1.
+} else if (sub === "sub-2") {
+	// Your code for the sub command #2.
+} else return;
+```
 
 # What is MongoDB and Quick.db?
 MongoDB is a database program. You can save some documents, data, and more! The official site of MongoDB is linked [here](https://www.mongodb.com/).<br>
