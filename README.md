@@ -217,7 +217,7 @@ Quick.db is also a database program, more simplified than MongoDB but doesn't ha
 There are a lot of issues happens with some users. You can create an issue on this repository and I will respond to your opened issue(s) as fast as possible. I'm always busy, so please wait for me to respond to your issues.
 
 # Credits are required? (©)
-Forking this repository and sharing it again without giving credits to me (T.F.A) is **not acceptable**. You **can** remove the credits in some bot commands like ?help, ?ping... etc, but **not** in the main files like README.md, index.js... If you want to make a video about this repository, ask firstly to me and then I will give you the permissions to record, else, bypassing by without asking permissions will ends in a copyright warning.
+Forking this repository and sharing it again without the credits to me is **UNACCEPTABLE**. Same thing for editing, Forking this repository and editing it to make it 100% not like this repository is **NOT ALLOWED** and ends in a **COPYRIGHT WARNING** by me. Stealing people's projects and then sharing it again is **NOT COOL** and a good thing to do. If you want to record a video, Ask the permissions in my DMs and then you will be allowed to record a video about this repository/handler, **BUT** if you have downloaded the project, make your own bot using this handler (Moderation bot, for an example) and record a video about your project is **OK**.
 
 ### Contact me!
 <a href='https://www.youtube.com/c/TFA7524' target="_blank">
