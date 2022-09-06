@@ -60,6 +60,31 @@ module.exports = (client, config) => {
     };
   });
 
+  // Message commands handler:
+  fs.readdirSync('./commands/message/').forEach((dir) => {
+    console.log('[!] Started loading user commands...'.yellow);
+    const UserCommands = fs.readdirSync(`./commands/message/${dir}`).filter((file) => file.endsWith('.js'));
+
+    for (let file of UserCommands) {
+      let pull = require(`../commands/message/${dir}/${file}`);
+
+      if (pull.name, pull.type == 3) {
+        client.message_commands.set(pull.name, pull);
+        console.log(`[HANDLER - USER] Loaded a file: ${pull.name} (#${client.user_commands.size})`.brightGreen);
+
+        commands.push({
+          name: pull.name,
+          type: pull.type || 3,
+        });
+
+      } else {
+        console.log(`[HANDLER - USER] Couldn't load the file ${file}, missing module name value or type isn't 2.`.red)
+        continue;
+      };
+    };
+  });
+
+  // Registering all the application commands:
   if (!config.Client.ID) {
     console.log("[CRASH] You need to provide your bot ID in config.js!".red + "\n");
     return process.exit();
