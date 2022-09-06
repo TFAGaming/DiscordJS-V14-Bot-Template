@@ -1,4 +1,4 @@
-const { EmbedBuilder, PermissionsBitField } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const client = require("../../index");
 const config = require("../../config/config.js");
 const { QuickDB } = require("quick.db");
@@ -28,6 +28,25 @@ client.on('interactionCreate', async (interaction) => {
 
     try {
       command.run(client, interaction, config, db);
+    } catch (e) {
+      console.error(e)
+    };
+  };
+
+  if (interaction.isModalSubmit()) { // Modals:
+    const modal = client.modals.get(interaction.customId);
+
+    if (!modal) return interaction.reply({
+      embeds: [
+        new EmbedBuilder()
+          .setDescription('Something went wrong... Probably the Modal ID is not defined in the modals handler.')
+          .setColor('Red')
+      ],
+      ephemeral: true
+    });
+
+    try {
+      modal.run(client, interaction, config, db);
     } catch (e) {
       console.error(e)
     };
