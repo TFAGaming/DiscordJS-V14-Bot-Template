@@ -38,17 +38,21 @@ You can click on the star (⭐️) button above this repository if you liked thi
 Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.js/main/general/welcome).
 
 # Project Features:
-### Prefix commands!
+### Prefix commands handler!
 <img src="https://media.discordapp.net/attachments/1006491186875338823/1016288782561054740/2022-09-05_11_08_23-Window.png">
 
-### Slash commands!
+### Slash commands handler!
 <img src="https://media.discordapp.net/attachments/1006491186875338823/1016288782368112660/2022-09-05_11_07_58-Window.png">
 
-### User commands!
+### User commands handler!
 <img src="https://media.discordapp.net/attachments/1006491186875338823/1016288782040965161/2022-09-05_11_07_46-Window.png">
 
-### Message commands!
+### Message commands handler!
 <img src="https://media.discordapp.net/attachments/994957246364647526/1016656196746358795/2022-09-06_11_19_59-Discord___verification___Testers_Paradise_-_Discord.png">
+
+### Modals handler!
+<img src="https://media.discordapp.net/attachments/1006491186875338823/1016737229374226562/2022-09-06_16_50_18-Discord___test___Testers_Paradise_-_Discord.png"><br>
+<img src="https://media.discordapp.net/attachments/1006491186875338823/1016737229823025224/2022-09-06_16_50_31-Discord___test___Testers_Paradise_-_Discord.png">
 
 # How to setup:
 ### - Requirements:
