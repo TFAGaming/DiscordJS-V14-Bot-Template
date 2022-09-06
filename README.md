@@ -47,6 +47,9 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 ### User commands!
 <img src="https://media.discordapp.net/attachments/1006491186875338823/1016288782040965161/2022-09-05_11_07_46-Window.png">
 
+### Message commands!
+<img src="https://media.discordapp.net/attachments/994957246364647526/1016656196746358795/2022-09-06_11_19_59-Discord___verification___Testers_Paradise_-_Discord.png">
+
 # How to setup:
 ### - Requirements:
 
@@ -107,107 +110,6 @@ module.exports = {
 • 6- Go to `Environment Secret Variables` (Located at your left screen with a 🔒 icon). This feature from Replit avoid attackers from accessing your secrets. Use the key as a variable, and the value is the variable's value. The key for your bot token is `TOKEN`, and the key for your Mongo URI is `MONGO`. After finishing this, click on `Add new secret`.<br>
 • 7- Click on the green button on top of your screen `► Run` to start running your project.<br>
 • 8- Enjoy! =)
-
-# Slash commands:
-### Creating options:
-This table is also located at official Discord Developer portal: [Click here](https://discord.com/developers/docs/interactions/application-commands#application-command-object)
-Creating options should be an Array, here's an example:
-```js
-options: [
-	{
-		name: "text",
-		description: "write anything you want!",
-		type: 3,
-		required: false
-	}
-]
-```
-> ⚠️ **WARNING:** The name of any option should be in lower case.
-
-> ⚠️ **WARNING:** All the required options (`required = true`) should be the first options, and then the not required options.
-
-We used the type `3` for the **String** option. There are other option types:
-| Name: | Value: |
-| ----- | ------ |
-| STRING | 3 |
-| INTEGER | 4 |
-| BOOLEAN | 5 |
-| USER | 6 |
-| CHANNEL | 7 |
-| ROLE | 8 |
-| MENTIONABLE | 9 |
-| NUMBER | 10 |
-| ATTACHMENT | 11 |
-
-### Getting an option's value:
-```js
-const a = interaction.options.get('YOUR OPTION NAME').value;
-```
-### Choices:
-```js
-options: [
-	{
-		name: "choice",
-		description: "Choose something!",
-		type: 3,
-		required: true,
-		choices: [
-			{
-				name: "Choice #1",
-				value: "1"
-			},
-			{
-				name: "Choice #2",
-				value: "2"
-			}
-		]
-	}
-]
-```
-
-> ⚠️  **WARNING:** Choices should be in the option type **string** (3).
-### Sub commands:
-Sub commands type is always `1`. You can add more options in a option if you are using the sub command type.
-```js
-options: [
-	{
-		name: "sub",
-		description: "A sub command",
-		type: 1,
-		options: [
-			{
-				name: "text",
-				description: "Write anything you want!",
-				type: 3,
-				required: true
-			}
-		]
-	},
-	{
-		name: "sub-2",
-		description: "Sub command 2",
-		type: 1,
-		options: [
-			{
-				name: "text",
-				description: "Write anything you want!",
-				type: 3,
-				required: true
-			}
-		]
-	}
-]
-```
-### Getting a Sub command's value:
-```js
-const sub = interaction.options.getSubcommand();
-
-if (sub === "sub") {
-	// Your code for the sub command #1.
-} else if (sub === "sub-2") {
-	// Your code for the sub command #2.
-} else return;
-```
 
 # What is MongoDB and Quick.db?
 MongoDB is a database program. You can save some documents, data, and more! The official site of MongoDB is linked [here](https://www.mongodb.com/).<br>
