@@ -62,7 +62,7 @@ module.exports = (client, config) => {
 
   // Message commands handler:
   fs.readdirSync('./commands/message/').forEach((dir) => {
-    console.log('[!] Started loading user commands...'.yellow);
+    console.log('[!] Started loading message commands...'.yellow);
     const UserCommands = fs.readdirSync(`./commands/message/${dir}`).filter((file) => file.endsWith('.js'));
 
     for (let file of UserCommands) {
