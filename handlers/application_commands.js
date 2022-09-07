@@ -70,7 +70,7 @@ module.exports = (client, config) => {
 
       if (pull.name, pull.type == 3) {
         client.message_commands.set(pull.name, pull);
-        console.log(`[HANDLER - USER] Loaded a file: ${pull.name} (#${client.user_commands.size})`.brightGreen);
+        console.log(`[HANDLER - MESSAGE] Loaded a file: ${pull.name} (#${client.user_commands.size})`.brightGreen);
 
         commands.push({
           name: pull.name,
@@ -78,7 +78,7 @@ module.exports = (client, config) => {
         });
 
       } else {
-        console.log(`[HANDLER - USER] Couldn't load the file ${file}, missing module name value or type isn't 2.`.red)
+        console.log(`[HANDLER - MESSAGE] Couldn't load the file ${file}, missing module name value or type isn't 2.`.red)
         continue;
       };
     };
