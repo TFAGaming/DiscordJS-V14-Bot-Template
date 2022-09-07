@@ -17,7 +17,7 @@ module.exports = {
     ownersID.forEach(Owner => {
       const fetchedOWNER = message.guild.members.cache.get(Owner);
       if (!fetchedOWNER) ownersARRAY.push("*Unknown User#0000*");
-      ownersARRAY.push(`${fetchedOWNER.user.tag}`);
+      ownersARRAY.push(`${fetchedOWNER}`);
     });
 
     message.reply({ embeds: [
