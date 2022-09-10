@@ -1,0 +1,1 @@
+{"version":3,"file":"attachment.d.ts","sourceRoot":"","sources":["../../../../src/interactions/slashCommands/options/attachment.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,qCAAqC,EAAE,4BAA4B,EAAE,MAAM,uBAAuB,CAAC;AAC5G,OAAO,EAAE,4BAA4B,EAAE,MAAM,wCAAwC,CAAC;AAEtF,qBAAa,4BAA6B,SAAQ,4BAA4B;IAC7E,SAAyB,IAAI,0CAAoD;IAE1E,MAAM,IAAI,qCAAqC;CAKtD"}

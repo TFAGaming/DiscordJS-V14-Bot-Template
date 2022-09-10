@@ -1,9 +1,10 @@
 const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
-    name: "",
-    type: 2,
+    name: "", // Name of command
+    type: 2, // Command type
     run: async (client, interaction, config, db) => {
+        // execute
 
     },
 };
