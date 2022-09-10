@@ -1,1 +1,0 @@
-{"version":3,"file":"mentionable.d.ts","sourceRoot":"","sources":["../../../../src/interactions/slashCommands/options/mentionable.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,sCAAsC,EAAE,4BAA4B,EAAE,MAAM,uBAAuB,CAAC;AAC7G,OAAO,EAAE,4BAA4B,EAAE,MAAM,wCAAwC,CAAC;AAEtF,qBAAa,6BAA8B,SAAQ,4BAA4B;IAC9E,SAAgB,IAAI,2CAAqD;IAElE,MAAM,IAAI,sCAAsC;CAKvD"}
