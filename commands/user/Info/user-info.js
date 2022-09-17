@@ -12,7 +12,7 @@ module.exports = {
         const joinedAgoCalculator = {
             fetch: {
                 user(userInput, type) {
-                    if (!userInput) throw new TypeError('You didn\'t provided the user to calculate.');
+                    if (!userInput) throw new ReferenceError('You didn\'t provided the user to calculate.');
 
                     if (type === "discord") {
                         const joinedDiscordTimestampInNumber = new Date().getTime() - userInput.createdTimestamp;
@@ -24,7 +24,7 @@ module.exports = {
                         const joinedServerTimestampInString = moment(userInput.joinedAt).fromNow();
 
                         return joinedServerTimestampInString.toString(); // Just making sure it's string.
-                    } else throw new TypeError('Invalid type. Use "discord" or "server" only.');
+                    } else throw new ReferenceError('Invalid type. Use "discord" or "server" only.');
                 }
             }
         };
