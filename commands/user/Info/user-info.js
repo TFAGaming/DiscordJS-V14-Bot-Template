@@ -1,5 +1,5 @@
-const { EmbedBuilder } = require('discord.js');
-const ms = require('pretty-ms'); // npm i pretty-ms@6
+const { EmbedBuilder, PermissionsBitField } = require('discord.js');
+const moment = require('moment');
 
 module.exports = {
     name: "User Info",
@@ -8,18 +8,54 @@ module.exports = {
 
         const user = interaction.guild.members.cache.get(interaction.targetId);
 
-        // Joined server [TIME] ago:
-        const joinedDiscordTimestampInString = new Date().getTime() - user.user.createdTimestamp;
-        const joinedDiscordTimestampInStringTime = ms(joinedDiscordTimestampInString, { verbose: true });
+        // Joined server/discord handler:
+        const joinedAgoCalculator = {
+            fetch: {
+                user(userInput, type) {
+                    if (!userInput) throw new TypeError('You didn\'t provided the user to calculate.');
 
-        // Joined Discord [TIME] ago:
-        const joinedServerTimestampInString = new Date().getTime() - user.joinedTimestamp;
-        const joinedServerTimestampInStringTime = ms(joinedServerTimestampInString, { verbose: true });
+                    if (type === "discord") {
+                        const joinedDiscordTimestampInNumber = new Date().getTime() - userInput.createdTimestamp;
+                        const joinedDiscordTimestampInString = moment(userInput.user.createdAt).fromNow();
+
+                        return joinedDiscordTimestampInString.toString(); // Just making sure it's string.
+                    } else if (type === "server") {
+                        const joinedServerTimestampInNumber = new Date().getTime() - userInput.joinedTimestamp;
+                        const joinedServerTimestampInString = moment(userInput.joinedAt).fromNow();
+
+                        return joinedServerTimestampInString.toString(); // Just making sure it's string.
+                    } else throw new TypeError('Invalid type. Use "discord" or "server" only.');
+                }
+            }
+        };
 
         // Bot type handler:
         const bot = {
             true: "Yes",
             false: "No"
+        };
+
+        // Acknowledgements handler:
+        // L for Dyno developers
+        const acknowledgements = {
+            fetch: {
+                user(userInput) {
+                    let result;
+
+                    try {
+                        if (userInput.permissions.has(PermissionsBitField.ViewChannel)) result = "Server Member";
+                        if (userInput.permissions.has(PermissionsBitField.KickMembers)) result = "Server Moderator";
+                        if (userInput.permissions.has(PermissionsBitField.ManageServer)) result = "Server Manager";
+                        if (userInput.permissions.has(PermissionsBitField.Administrator)) result = "Server Administrator";
+                        if (userInput.id === interaction.guild.ownerId) result = "Server Owner";
+
+                    } catch (e) {
+                        result = "Server Member";
+                    };
+
+                    return result;
+                }
+            }
         };
 
         // Finals:
@@ -51,18 +87,22 @@ module.exports = {
                             },
                             {
                                 name: "Joined server at",
-                                value: `${new Date(user.joinedTimestamp).toLocaleString()}\n(*${joinedServerTimestampInStringTime} ago*)`,
+                                value: `${new Date(user.joinedTimestamp).toLocaleString()}\n(${joinedAgoCalculator.fetch.user(user, "server")})`,
                                 inline: true
                             },
                             {
                                 name: "Joined Discord at",
-                                value: `${new Date(user.user.createdTimestamp).toLocaleString()}\n(*${joinedDiscordTimestampInStringTime} ago*)`,
+                                value: `${new Date(user.user.createdTimestamp).toLocaleString()}\n(${joinedAgoCalculator.fetch.user(user, "discord")})`,
                                 inline: true
                             },
                             {
                                 name: "A Bot?",
                                 value: `${bot[user.user.bot]}`,
                                 inline: true
+                            },
+                            {
+                                name: "Acknowledgements",
+                                value: `${acknowledgements.fetch.user(user)}`
                             }
                         )
                         .setColor('Blue')
