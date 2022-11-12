@@ -35,8 +35,7 @@
 A Discord bot project made with the npm package discord.js version 14 and it handles Prefix and Slash commands, and it includes two Databases: MongoDB and Quick.DB! You can create many commands as you want to improve your Bot. **Project made with ❤ by T.F.A#7524.**<br>
 You can click on the star (⭐️) button above this repository if you liked this project! Thank you all. 🙏
 
-Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.js/main/general/welcome).
-My package (super-djs) is linked [here](https://www.npmjs.com/package/super-djs).
+Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.js/main/general/welcome).<br>My package (super-djs) is linked [here](https://www.npmjs.com/package/super-djs).
 
 # Project Features:
 ### Prefix commands handler!
