@@ -17,7 +17,7 @@
     </a>
     <a style="font-size:15px;font-family:verdana"><b>Fork/Download For:</b></a><br>
     <a href="https://replit.com/github/TFAGaming/DiscordJS-V14-Bot-Template">
-        <img src="https://img.shields.io/badge/Repl.it-100000?label=Fork%20on:&style=flat&logo=replit&color=808080&logoColor=white">
+        <img src="https://img.shields.io/badge/Repl.it-100000?label=Fork%20on:&style=flat&logo=replit&color=808080&logoColor=orange">
     </a>
     <a href="https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/archive/refs/heads/main.zip">
         <img src="https://img.shields.io/badge/Visual Studio Code-100000?label=Download%20for:&style=flat&logo=visual studio code&color=blue&logoColor=007ACC">
@@ -36,6 +36,7 @@ A Discord bot project made with the npm package discord.js version 14 and it han
 You can click on the star (⭐️) button above this repository if you liked this project! Thank you all. 🙏
 
 Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.js/main/general/welcome).
+My package (super-djs) is linked [here](https://www.npmjs.com/package/super-djs).
 
 # Project Features:
 ### Prefix commands handler!
