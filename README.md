@@ -38,11 +38,11 @@ You can click on the star (⭐️) button above this repository if you liked thi
 Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.js/main/general/welcome).<br>My package (super-djs) is linked [here](https://www.npmjs.com/package/super-djs).
 
 # Project Features:
-• Prefix commands.
-• Slash commands.
-• User commands.
-• Message commands.
-• Modals handler.
+• Prefix commands.<br>
+• Slash commands.<br>
+• User commands.<br>
+• Message commands.<br>
+• Modals handler.<br>
 • Buttons handler (Coming soon).
 
 # How to setup:
@@ -60,8 +60,8 @@ Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.
 • 6- Go to `OAuth2` section, and then `URL Generator`. Select the scopes `bot` and `application.commands`, and then scroll down to **Bot Permissions**, select `Administrator` (For all guild permissions). Copy the link that is generated below, open a new browser tab, paste the URL, choose a server where your bot will be in, verify yourself that you are not a robot, and Done!
 
 ### - Setup your project:
-Select a guide here:
-• [Visual Studio Code](https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/blob/main/Installation%20Guide/Visual%20Studio%20Code.md).
+Select a guide here:<br>
+• [Visual Studio Code](https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/blob/main/Installation%20Guide/Visual%20Studio%20Code.md).<br>
 • [Repl.it](https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/blob/main/Installation%20Guide/Replit.md).
 
 # Something doesn't work here...
