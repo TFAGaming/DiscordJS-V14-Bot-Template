@@ -1,4 +1,4 @@
-## A new Handler is coming soon...
+## 👋 New handler is [here!!](https://github.com/TFAGaming/DiscordJS-Commands-Handler)
 
 <p align="center">
 	<img src="https://github-readme-stats.vercel.app/api/pin/?username=TFAGaming&repo=DiscordJS-V14-Bot-Template&theme=dark" style="float: left; margin: 0px 10px 15px 1px;"/> <a style="font-size: 20px"> <a style="font-size: 30px">
