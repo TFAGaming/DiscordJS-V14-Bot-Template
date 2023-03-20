@@ -39,6 +39,9 @@ You can click on the star (⭐️) button above this repository if you liked thi
 
 Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.js/main/general/welcome).<br>My package (super-djs) is linked [here](https://www.npmjs.com/package/super-djs).
 
+> **Warning**
+This project is no longer supported, please check out the new project: https://github.com/TFAGaming/DiscordJS-Commands-Handler
+
 # Project Features:
 • Prefix commands.<br>
 • Slash commands.<br>
