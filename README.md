@@ -1,5 +1,3 @@
-## 👋 New handler is [here!!](https://github.com/TFAGaming/DiscordJS-Commands-Handler)
-
 <p align="center">
 	<img src="https://github-readme-stats.vercel.app/api/pin/?username=TFAGaming&repo=DiscordJS-V14-Bot-Template&theme=dark" style="float: left; margin: 0px 10px 15px 1px;"/> <a style="font-size: 20px"> <a style="font-size: 30px">
 </p>
@@ -38,9 +36,6 @@ A Discord bot project made with the npm package discord.js version 14 and it han
 You can click on the star (⭐️) button above this repository if you liked this project! Thank you all. 🙏
 
 Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.js/main/general/welcome).<br>My package (super-djs) is linked [here](https://www.npmjs.com/package/super-djs).
-
-> **Warning**
-This project is no longer supported, please check out the new project: https://github.com/TFAGaming/DiscordJS-Commands-Handler
 
 # Project Features:
 • Prefix commands.<br>
