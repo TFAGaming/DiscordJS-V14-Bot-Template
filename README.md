@@ -1,79 +1,114 @@
-<p align="center">
-	<img src="https://github-readme-stats.vercel.app/api/pin/?username=TFAGaming&repo=DiscordJS-V14-Bot-Template&theme=dark" style="float: left; margin: 0px 10px 15px 1px;"/> <a style="font-size: 20px"> <a style="font-size: 30px">
-</p>
+# <samp>DiscordJS-V14-Bot-Template</samp> v2
 
-<p align="center">
-    <a style="font-size:15px;font-family:verdana"><b>GitHub Repository Statistics/Info:</b></a><br>
-    <img src="https://img.shields.io/github/release/TFAGaming/DiscordJS-V14-Bot-Template?label=Last%20Release">
-    <!--<img src="https://img.shields.io/github/forks/TFAGaming/DiscordJS-V14-Bot-Template?label=Forks&color=32CD32">
-    <img src="https://img.shields.io/github/stars/TFAGaming/DiscordJS-V14-Bot-Template?label=Stars&color=yellow"  -->
-     <img src="https://img.shields.io/github/license/TFAGaming/DiscordJS-V14-Bot-Template?label=License&color=808080">
-    <img src="https://img.shields.io/github/issues/TFAGaming/DiscordJS-V14-Bot-Template?label=Issues&color=yellow">
-    <img src="https://img.shields.io/github/issues-closed/TFAGaming/DiscordJS-V14-Bot-Template?label=Issues%20Closed&color=32CD32">
-    <br>
-    <a style="font-size:15px;font-family:verdana"><b>Discord Server:</b></a><br>
-    <a href="https://discord.gg/bGNRZcnwWy">
-        <img src="https://img.shields.io/discord/918611797194465280.svg?label=Discord%20Server:&logo=discord&color=5865F2"><br>
-    </a>
-    <a style="font-size:15px;font-family:verdana"><b>Fork/Download For:</b></a><br>
-    <a href="https://replit.com/github/TFAGaming/DiscordJS-V14-Bot-Template">
-        <img src="https://img.shields.io/badge/Repl.it-100000?label=Fork%20on:&style=flat&logo=replit&color=808080&logoColor=orange">
-    </a>
-    <a href="https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/archive/refs/heads/main.zip">
-        <img src="https://img.shields.io/badge/Visual Studio Code-100000?label=Download%20for:&style=flat&logo=visual studio code&color=blue&logoColor=007ACC">
-    </a>
-    <a href="https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/fork">
-        <img src="https://img.shields.io/badge/GitHub-100000?label=Fork%20on:&style=flat&logo=github&color=808080">
-    </a><br>
-    <a style="font-size:15px;font-family:verdana"><b>Tutorial:</b></a><br>
-    <a href="https://www.youtube.com/watch?v=dGyzjW9Ld4U&t=175s&ab_channel=T.F.A7524">
-	<img src="https://img.shields.io/badge/YouTube-100000?logo=youtube&logoColor=ff0000&label=Tutorial%20on:&color=ff0000">
-    </a>
-</p>
+The simplified Discord bot commands handler built with discord.js version 14 and written in JavaScript. This handler can load up to 4 different type of commands; Prefix, Slash, User context and Message context.
 
-# DiscordJS V14 Bot Template - Introduction:
-A Discord bot project made with the npm package discord.js version 14 and it handles Prefix and Slash commands, and it includes two Databases: MongoDB and Quick.DB! You can create many commands as you want to improve your Bot. **Project made with ❤ by T.F.A#7524.**<br>
-You can click on the star (⭐️) button above this repository if you liked this project! Thank you all. 🙏
+- The prefix commands are normal message commands that only starts with a specific guild prefix. By default, it's `?`.
+- The slash commands are built-in Discord commands and are more simplified than prefix commands. The prefix is always `/`.
+- The user commands are built-in Discord commands, and to execute a user command, right-click on a Discord user profile, Apps, and then select the command.
+- The message commands are also built-in Discord commands, and to execute a message command, right-click on a message, Apps, and then select the command.
 
-Discord.js Documentation is linked [here](https://discord.js.org/#/docs/discord.js/main/general/welcome).<br>My package (super-djs) is linked [here](https://www.npmjs.com/package/super-djs).
+Did you liked my project? Click on the star button (⭐️) right above your screen, thank you!
 
-# Project Features:
-• Prefix commands.<br>
-• Slash commands.<br>
-• User commands.<br>
-• Message commands.<br>
-• Modals handler.<br>
-• Buttons handler (Coming soon).
+Looking for the old version? [Click here](https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/releases/tag/v1.7.0-last).
 
-# How to setup:
-### - Requirements:
+## Commands/Events structure
 
-• **Node.js v16.9.0 or above.** <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/v16.9.0-100000?style=flat&logo=node.js&label=Node.js&color=blue&logoColor=lime"></a><br>
-• **Discord.js v14.3.0 or above**. <a href="https://www.npmjs.com/package/discord.js"><img src="https://img.shields.io/badge/v14.3.0-100000?style=flat&logo=npm&label=Discord.js&color=blue"></a>
+This handler uses **CommonJS** modules, so don't try to use ES6 modules (`import`, `from`, `export`... etc.) or else you need to reformat the entire code.
 
-### - Creating a new client and inviting the bot:
-• 1- Go to [Discord Developer Portal](https://discord.com/developers) and then go to `Applications`. <br>
-• 2- Create a new application and choose it's name. <br>
-• 3- Put your application's avatar (not important).<br>
-• 4- Go to `Bot` section and turn your application into a bot. <br>
-• 5- Scroll down and enable the three disabled `Privileged Gateaway Intents` intents (`PRESENCE INTENT`, `SERVER MEMBERS INTENT`, and `MESSAGE CONTENT INTENT`).<br>
-• 6- Go to `OAuth2` section, and then `URL Generator`. Select the scopes `bot` and `application.commands`, and then scroll down to **Bot Permissions**, select `Administrator` (For all guild permissions). Copy the link that is generated below, open a new browser tab, paste the URL, choose a server where your bot will be in, verify yourself that you are not a robot, and Done!
+### Prefix:
+```ts
+module.exports = {
+    structure: {
+        name: string,
+        description: string,
+        aliases: string[]
+    },
+    run: async (client, message, args) => {
+        
+    }
+};
+```
 
-### - Setup your project:
-Select a guide here:<br>
-• [Visual Studio Code](https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/blob/main/Installation%20Guide/Visual%20Studio%20Code.md).<br>
-• [Repl.it](https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/blob/main/Installation%20Guide/Replit.md).
+### Slash/User/Message:
+```ts
+module.exports = {
+    structure: SlashCommandBuilder | ContextMenuCommandBuilder,
+    run: async (client, interaction) => {
+        
+    }
+};
+```
 
-# Something doesn't work here...
-There are a lot of issues happens with some users. You can create an issue on this repository and I will respond to your opened issue(s) as fast as possible. I'm always busy, so please wait for me to respond to your issues.
+## Requirements
+### Packages:
+- **chalk** v2.4.2
+- **discord.js** v^14.11.0
+- **dotenv** v^latest
+- **mongoose** v^latest
 
-# Credits are required? (©)
-Forking this repository and sharing it again without the credits to me is **UNACCEPTABLE**. Project coded by: **T.F.A#7524**
+```
+npm i chalk@2.4.2 discord.js@14 dotenv mongoose
+```
 
-### Contact me!
-<a href='https://www.youtube.com/c/TFA7524' target="_blank">
-    <img alt='YouTube' src='https://img.shields.io/badge/YouTube-100000?style=social&logo=YouTube&logoColor=FF0000&labelColor=000000&color=EAE9E9'/>
-</a>
-<a href='https://dsc.gg/codingdevelopment' target="_blank">
-    <img alt='Discord' src='https://img.shields.io/badge/Discord-100000?style=social&logo=Discord&logoColor=5865F2&labelColor=000000&color=EAE9E9'/>
-</a>
+### Platforms:
+- **Node.js** v^16.9.0
+
+## Setup
+1. Install Visual Studio Code.
+2. Download this project as a **.zip** file: [Click here](https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/archive/refs/heads/main.zip)
+3. Extract the .zip file into a normal folder.
+4. Open VSCode, click on **Open Folder**, and select the new created folder.
+5. Go to `src/` and rename `example.config.js` to `config.js` and fill all the required values.
+
+```ts
+client: {
+  token: string, // <= Your bot token
+  id: string // <= Your bot ID
+},
+handler: {
+  prefix: string, // <= The bot prefix
+  deploy: boolean, // <= Always load application commands to Discord? (true: Yes, false: No)
+  commands: { // Toggle commands (true: Enable, false: Disable)
+    prefix: boolean, // <= Toggle prefix commands
+    slash: boolean, // <= Toggle slash commands
+    user: boolean, // <= Toggle user commands
+    message: boolean // <= Toggle message commands
+  },
+  mongodb: { // MongoDB database
+    uri: string // <= Your MongoDB URI string
+  }
+}
+```
+
+6. Run in the terminal `npm init` or `npm init -y` (to skip the steps), and then `npm i` to install the dependencies.
+6. To start your bot, run: `node .`.
+7. Enjoy. =)
+
+## Hosting (<img src="https://media.discordapp.net/attachments/1111644651036876822/1124045180484472882/discloud_white_horizon-e96efbfa.png?width=960&height=163" width=100>)
+Use [DisCloud](https://discloudbot.com/)! A trust-worthy Discord bot hosting service.
+
+1. Login using your Discord/GitHub account, and then don't close the Dashboard tab (because we need it later).
+2. Go to your project on VSCode, create a new file `discloud.config`. This file is a configuration file for DisCloud apps servers. The `discloud.config` file content must be like the codeblock below, and remember to change **YOUR_BOT_ID** to your actual bot ID.
+
+```config
+ID = YOUR_BOT_ID
+TYPE = bot
+MAIN = src/index.js
+RAM = 100
+AUTORESTART = true
+VERSION = latest
+API = tools
+```
+
+3. Open explorer and navigate using the path of your project. Hold the **CTRL** key, and click on `src/`, `package.json`, and `discloud.config`. Now release the key, and right click on the selected files/folders and click on **Convert into .zip file**.
+4. Go back to the DisCloud dashboard, click on **Add App**, and then upload the .zip file in the upload box. Make sure to accept the ToS of the service and then click on **Upload**.
+5. Wait for at least 20 seconds (depends on your Internet speed), and then your bot should be on.
+
+> **Warning**
+> DisCloud has recently made every Free plan servers into **15 days** hosting only. Use the command `.rw` from their bot in the commands channel (on their Discord server) to reset the timer to **0**.
+
+## Contributors
+<img src="https://contrib.rocks/image?repo=TFAGaming/DiscordJS-V14-Bot-Template">
+
+## License
+**GPL-3.0**, General Public License v3
