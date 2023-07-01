@@ -25,7 +25,12 @@ module.exports = class extends Client {
                 Partials.Channel,
                 Partials.User,
                 Partials.Message
-            ]
+            ],
+            presence: {
+                activities: [{
+                    name: 'DiscordJS-V14-Bot-Template v2'
+                }]
+            }
         });
     };
 

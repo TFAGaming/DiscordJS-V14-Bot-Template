@@ -21,7 +21,7 @@ const log = (string, style) => {
         };
 
         case 'done': {
-            console.warn(chalk.green('[SUCCESS] ' + string));
+            console.log(chalk.green('[SUCCESS] ' + string));
 
             break;
         };

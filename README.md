@@ -1,11 +1,11 @@
 # <samp>DiscordJS-V14-Bot-Template</samp> v2
 
-The simplified Discord bot commands handler built with discord.js version 14 and written in JavaScript. This handler can load up to 4 different type of commands; Prefix, Slash, User context and Message context.
+The simplified Discord bot commands & events handler built with discord.js version 14 and written in JavaScript. This handler can load up to 4 different type of commands; Prefix, Slash, User context and Message context.
 
-- The prefix commands are normal message commands that only starts with a specific guild prefix. By default, it's `?`.
+- The prefix commands are normal message commands that only starts with a specific guild prefix. By default, it's the prefix provided in the `config.js` file.
 - The slash commands are built-in Discord commands and are more simplified than prefix commands. The prefix is always `/`.
-- The user commands are built-in Discord commands, and to execute a user command, right-click on a Discord user profile, Apps, and then select the command.
-- The message commands are also built-in Discord commands, and to execute a message command, right-click on a message, Apps, and then select the command.
+- The user commands are built-in Discord commands, and to execute a user command, right-click on a Discord user profile, Apps, and then select a command.
+- The message commands are built-in Discord commands, and to execute a message command, right-click on a message, Apps, and then select a command.
 
 Did you liked my project? Click on the star button (⭐️) right above your screen, thank you!
 
@@ -13,7 +13,8 @@ Looking for the old version? [Click here](https://github.com/TFAGaming/DiscordJS
 
 ## Commands/Events structure
 
-This handler uses **CommonJS** modules, so don't try to use ES6 modules (`import`, `from`, `export`... etc.) or else you need to reformat the entire code.
+> **Note**
+> This handler uses **CommonJS** modules system.
 
 ### Prefix:
 ```ts
@@ -39,6 +40,18 @@ module.exports = {
 };
 ```
 
+### Event:
+```ts
+module.exports = {
+    event: string,
+    once: boolean,
+    // ...args are the arguments of the event chosen (from discord.js).
+    run: (client, ...args) => {
+        
+    }
+};
+```
+
 ## Requirements
 ### Packages:
 - **chalk** v2.4.2
@@ -46,12 +59,13 @@ module.exports = {
 - **dotenv** v^latest
 - **mongoose** v^latest
 
-```
-npm i chalk@2.4.2 discord.js@14 dotenv mongoose
-```
-
 ### Platforms:
 - **Node.js** v^16.9.0
+
+```
+npm init -y
+npm i chalk@2.4.2 discord.js@14 dotenv mongoose
+```
 
 ## Setup
 1. Install Visual Studio Code.
@@ -68,7 +82,7 @@ client: {
 handler: {
   prefix: string, // <= The bot prefix
   deploy: boolean, // <= Always load application commands to Discord? (true: Yes, false: No)
-  commands: { // Toggle commands (true: Enable, false: Disable)
+  commands: { // Toggle commands; true: Enable, false: Disable
     prefix: boolean, // <= Toggle prefix commands
     slash: boolean, // <= Toggle slash commands
     user: boolean, // <= Toggle user commands
@@ -80,8 +94,7 @@ handler: {
 }
 ```
 
-6. Run in the terminal `npm init` or `npm init -y` (to skip the steps), and then `npm i` to install the dependencies.
-6. To start your bot, run: `node .`.
+6. To start your bot, run `node .` or `npm run start`.
 7. Enjoy. =)
 
 ## Hosting (<img src="https://media.discordapp.net/attachments/1111644651036876822/1124045180484472882/discloud_white_horizon-e96efbfa.png?width=960&height=163" width=100>)
