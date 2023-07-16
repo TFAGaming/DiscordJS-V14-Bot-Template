@@ -14,8 +14,8 @@ module.exports = {
 
         try {
             command.run(client, interaction);
-        } catch (e) {
-            log(e, 'err');
-        };
-    }
+        } catch (error) {
+            log(error, 'err');
+        }
+    },
 };
