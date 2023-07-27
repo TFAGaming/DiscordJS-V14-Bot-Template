@@ -16,6 +16,14 @@ module.exports = {
      */
     run: async (client, message, args) => {
 
+        if (!config.handler?.mongodb?.toggle) {
+            await message.reply({
+                content: 'Database is not ready, this command cannot be executed.'
+            });
+
+            return;
+        };
+
         const type = args[0];
 
         switch (type) {

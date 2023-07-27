@@ -1,12 +1,11 @@
 {
   "name": "discordjs-v14-bot-template",
   "version": "2.0.0",
-  "description": "",
+  "description": "The simplified Discord bot commands & events handler built with discord.js version 14 and written in JavaScript. This handler can load up to 4 different type of commands; Prefix, Slash, User context and Message context.",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Wow is this a test?\" && exit 1",
-    "start": "node .",
-    "git": "git add . && git commit -m \"Git auto\""
+    "start": "node ."
   },
   "keywords": [],
   "author": "",

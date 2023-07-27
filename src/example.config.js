@@ -1,7 +1,7 @@
 module.exports = {
     client: {
-        token: 'Your Bot token',
-        id: 'Your Bot ID'
+        token: 'Your Bot token (USE ENV FOR SAFETY)',
+        id: 'Your Bot ID (USE ENV FOR SAFETY)'
     },
     handler: {
         prefix: '?',
@@ -13,7 +13,8 @@ module.exports = {
             message: true
         },
         mongodb: {
-            uri: 'Your MongoDB URI'
+            uri: 'Your MongoDB URI string (USE ENV FOR SAFETY)',
+            toggle: false
         }
     }
 };

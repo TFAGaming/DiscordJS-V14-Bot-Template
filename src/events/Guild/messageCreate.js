@@ -1,18 +1,33 @@
-const { ChannelType } = require('discord.js');
+const { ChannelType, Message } = require('discord.js');
 const config = require('../../config');
 const { log } = require('../../functions');
 const GuildSchema = require('../../schemas/GuildSchema');
+const ExtendedClient = require('../../class/ExtendedClient');
 
 module.exports = {
     event: 'messageCreate',
+    /**
+     * 
+     * @param {ExtendedClient} client 
+     * @param {Message} message 
+     * @returns 
+     */
     run: async (client, message) => {
         if (message.author.bot || message.channel.type === ChannelType.DM) return;
 
         if (!config.handler.commands.prefix) return;
 
-        const guildData = await GuildSchema.findOne({ guild: message.guildId });
+        let prefix = config.handler.prefix;
 
-        const prefix = guildData?.prefix || config.handler.prefix;
+        if (config.handler?.mongodb?.toggle) {
+            try {
+                const guildData = await GuildSchema.findOne({ guild: message.guildId });
+
+                prefix = guildData?.prefix;
+            } catch {
+                prefix = config.handler.prefix;
+            };
+        };
 
         if (!message.content.startsWith(prefix)) return;
 
@@ -25,6 +40,14 @@ module.exports = {
 
         if (command) {
             try {
+                if (command.structure?.permissions && !message.member.permissions.has(command.structure?.permissions)) {
+                    await message.reply({
+                        content: 'You do not have the permission to use this command.'
+                    });
+
+                    return;
+                };
+
                 command.run(client, message, args);
             } catch (error) {
                 log(error, 'err');

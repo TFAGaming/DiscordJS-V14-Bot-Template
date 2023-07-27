@@ -1,8 +1,15 @@
 const config = require('../../config');
 const { log } = require('../../functions');
+const ExtendedClient = require('../../class/ExtendedClient');
 
 module.exports = {
     event: 'interactionCreate',
+    /**
+     * 
+     * @param {ExtendedClient} client 
+     * @param {import('discord.js').Interaction} interaction 
+     * @returns 
+     */
     run: (client, interaction) => {
         if (config.handler.commands.slash === false && interaction.isChatInputCommand()) return;
         if (config.handler.commands.user === false && interaction.isUserContextMenuCommand()) return;

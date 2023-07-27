@@ -1,6 +1,11 @@
 const { readdirSync } = require('fs');
 const { log } = require('../functions');
+const ExtendedClient = require('../class/ExtendedClient');
 
+/**
+ * 
+ * @param {ExtendedClient} client 
+ */
 module.exports = (client) => {
     for (const dir of readdirSync('./src/events/')) {
         for (const file of readdirSync('./src/events/' + dir).filter((f) => f.endsWith('.js'))) {

@@ -1,6 +1,11 @@
 const { readdirSync } = require('fs');
 const { log } = require('../functions');
+const ExtendedClient = require('../class/ExtendedClient');
 
+/**
+ * 
+ * @param {ExtendedClient} client 
+ */
 module.exports = (client) => {
     for (const type of readdirSync('./src/commands/')) {
         for (const dir of readdirSync('./src/commands/' + type)) {

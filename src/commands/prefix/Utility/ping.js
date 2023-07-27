@@ -5,7 +5,8 @@ module.exports = {
     structure: {
         name: 'ping',
         description: 'Replies with Pong!',
-        aliases: ['p']
+        aliases: ['p'],
+        permissions: 'Administrator'
     },
     /**
      * @param {ExtendedClient} client 
