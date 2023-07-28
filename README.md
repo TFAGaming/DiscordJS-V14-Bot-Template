@@ -7,7 +7,7 @@ The simplified Discord bot commands & events handler built with discord.js versi
 - The user commands are built-in Discord commands, and to execute a user command, right-click on a Discord user profile, Apps, and then select a command.
 - The message commands are built-in Discord commands, and to execute a message command, right-click on a message, Apps, and then select a command.
 
-This project also handles components, such as Buttons and Select menu (any; String, User, Role...).
+This project also handles components. For now, there are only Buttons and Select menus.
 
 Did you like my project? Click on the star button (⭐️) right above your screen, thank you!
 
@@ -24,11 +24,10 @@ module.exports = {
     structure: {
         name: string,
         description: string,
-        aliases: string[]
+        aliases: string[],
+        permissions: PermissionFlagBits
     },
-    run: async (client, message, args) => {
-        
-    }
+    run: async (client, message, args) => Promise<void>
 };
 ```
 
@@ -36,9 +35,7 @@ module.exports = {
 ```ts
 module.exports = {
     structure: SlashCommandBuilder | ContextMenuCommandBuilder,
-    run: async (client, interaction) => {
-        
-    }
+    run: async (client, interaction) => Promise<void>
 };
 ```
 
@@ -48,9 +45,7 @@ module.exports = {
     event: string,
     once?: boolean,
     // '...args' are the arguments of the event chosen (from discord.js).
-    run: (client, ...args) => {
-        
-    }
+    run: async (client, ...args) => Promise<void>
 };
 ```
 
@@ -58,9 +53,7 @@ module.exports = {
 ```ts
 module.exports = {
     customId: string,
-    run: (client, interaction) => {
-        
-    }
+    run: async (client, interaction) => Promise<void>
 };
 ```
 
@@ -144,6 +137,13 @@ API = tools
 
 ## Contributors
 <img src="https://contrib.rocks/image?repo=TFAGaming/DiscordJS-V14-Bot-Template">
+
+## Support
+Join our Discord server if you need any help!
+
+<a href="https://discord.gg/E6VFACWu5V">
+  <img src="https://discord.com/api/guilds/918611797194465280/widget.png?style=banner3">
+</a>
 
 ## License
 **GPL-3.0**, General Public License v3

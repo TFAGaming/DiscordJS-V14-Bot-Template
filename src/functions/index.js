@@ -1,5 +1,10 @@
 const chalk = require('chalk');
 
+/**
+ * 
+ * @param {string} string 
+ * @param {'info' | 'err' | 'warn' | 'done' | undefined} style 
+ */
 const log = (string, style) => {
     switch (style) {
         case 'info': {

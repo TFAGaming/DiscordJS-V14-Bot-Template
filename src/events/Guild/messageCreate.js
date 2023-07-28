@@ -23,7 +23,7 @@ module.exports = {
             try {
                 const guildData = await GuildSchema.findOne({ guild: message.guildId });
 
-                prefix = guildData?.prefix;
+                if (guildData && guildData?.prefix) prefix = guildData.prefix;
             } catch {
                 prefix = config.handler.prefix;
             };

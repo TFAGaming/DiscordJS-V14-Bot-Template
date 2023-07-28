@@ -1,7 +1,15 @@
+const ExtendedClient = require('../../class/ExtendedClient');
+
 module.exports = {
     event: '',
     once: false,
-    run: (client, ...) => {
+    /**
+     * 
+     * @param {ExtendedClient} client
+     * @param {*} args... 
+     * @returns 
+     */
+    run: (client, args...) => {
         
     }
 };
