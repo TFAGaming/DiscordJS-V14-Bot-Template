@@ -39,6 +39,17 @@ const log = (string, style) => {
     };
 };
 
+/**
+ * 
+ * @param {number} time 
+ * @param {import('discord.js').TimestampStylesString} style
+ * @returns {`<t:${string}>`}
+ */
+const time = (time, style) => {
+    return `<t:${Math.floor(time / 1000)}${style ? `:${style}` : ''}>`;
+};
+
 module.exports = {
-    log
+    log,
+    time
 };
