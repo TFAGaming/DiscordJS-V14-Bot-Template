@@ -8,8 +8,8 @@
     "start": "node ."
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "TFAGaming",
+  "license": "GPL-3.0",
   "dependencies": {
     "chalk": "^2.4.2",
     "discord.js": "^14.12.1",

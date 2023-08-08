@@ -13,7 +13,8 @@ module.exports = class extends Client {
         aliases: new Collection(),
         components: {
             buttons: new Collection(),
-            selects: new Collection()
+            selects: new Collection(),
+            modals: new Collection()
         }
     };
     applicationcommandsArray = [];

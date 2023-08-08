@@ -7,7 +7,7 @@ The simplified Discord bot commands & events handler built with discord.js versi
 - The user commands are built-in Discord commands, and to execute a user command, right-click on a Discord user profile, Apps, and then select a command.
 - The message commands are built-in Discord commands, and to execute a message command, right-click on a message, Apps, and then select a command.
 
-This project also handles components. For now, there are only Buttons and Select menus.
+This project also handles components; Buttons, Modal submits, Select menus (any type).
 
 Did you like my project? Click on the star button (⭐️) right above your screen, thank you!
 
@@ -60,7 +60,7 @@ module.exports = {
 ## Requirements
 ### Packages:
 - **chalk** v2.4.2
-- **discord.js** v^14.11.0
+- **discord.js** v^14.12.0
 - **dotenv** v^latest
 - **mongoose** v^latest
 
@@ -80,23 +80,25 @@ npm i chalk@2.4.2 discord.js@14 dotenv mongoose
 5. Go to `src/` and rename `example.config.js` to `config.js` and fill all the required values.
 
 ```ts
-client: {
-  token: string, // <= Your bot token
-  id: string // <= Your bot ID
-},
-handler: {
-  prefix: string, // <= The bot prefix
-  deploy: boolean, // <= Always load application commands to Discord? (true: Yes, false: No)
-  commands: { // Toggle commands; true: Enable, false: Disable
-    prefix: boolean, // <= Toggle prefix commands
-    slash: boolean, // <= Toggle slash commands
-    user: boolean, // <= Toggle user commands
-    message: boolean // <= Toggle message commands
-  },
-  mongodb: { // MongoDB database
-    uri: string, // <= Your MongoDB URI string,
-    toggle: boolean // <= Connect to the database or not? (true: Yes, false: No)
-  }
+module.exports = {
+    client: {
+        token: string, // ← Your bot token
+        id: string // ← Your bot ID
+    },
+    handler: {
+        prefix: string, // ← The bot prefix
+        deploy: boolean, // ← Always load application commands to Discord? (true: Yes, false: No)
+        commands: {
+            prefix: boolean, // ← Toggle prefix commands
+            slash: boolean, // ← Toggle slash commands
+            user: boolean, // ← Toggle user commands
+            message: boolean // ← Toggle message commands
+        },
+        mongodb: {
+            uri: string, // ← Your MongoDB URI string,
+            toggle: boolean // ← Connect to the database or not? (true: Yes, false: No)
+        }
+    }
 }
 ```
 

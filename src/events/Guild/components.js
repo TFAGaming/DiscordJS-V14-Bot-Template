@@ -38,5 +38,19 @@ module.exports = {
 
             return;
         };
+
+        if (interaction.isModalSubmit()) {
+            const component = client.collection.components.modals.get(interaction.customId);
+
+            if (!component) return;
+
+            try {
+                component.run(client, interaction);
+            } catch (error) {
+                log(error, 'error');
+            }
+
+            return;
+        };
     },
 };
