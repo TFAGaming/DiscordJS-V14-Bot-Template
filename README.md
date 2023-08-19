@@ -13,6 +13,17 @@ Did you like my project? Click on the star button (⭐️) right above your scre
 
 Looking for the old version? [Click here](https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/releases/tag/v1.7.0-last).
 
+## Features
+- Supports all possible type of commands.
+    - Message commands (AKA: Prefix commands).
+    - Application commands:
+        - Chat Input
+        - User context
+        - Message context
+- Easy and simple to use
+- Updated to latest discord.js version.
+- Included a database: MongoDB
+
 ## Commands, events, and components structure
 
 > **Note**
@@ -25,7 +36,8 @@ module.exports = {
         name: string,
         description: string,
         aliases: string[],
-        permissions: PermissionFlagBits
+        permissions?: PermissionFlagBits,
+        cooldown?: number
     },
     run: async (client, message, args) => Promise<void>
 };
@@ -35,6 +47,7 @@ module.exports = {
 ```ts
 module.exports = {
     structure: SlashCommandBuilder | ContextMenuCommandBuilder,
+    options?: { },
     run: async (client, interaction) => Promise<void>
 };
 ```
@@ -60,7 +73,7 @@ module.exports = {
 ## Requirements
 ### Packages:
 - **chalk** v2.4.2
-- **discord.js** v^14.12.0
+- **discord.js** v^14.13.0
 - **dotenv** v^latest
 - **mongoose** v^latest
 
@@ -69,7 +82,7 @@ module.exports = {
 
 ```
 npm init -y
-npm i chalk@2.4.2 discord.js@14 dotenv mongoose
+npm install chalk@2.4.2 discord.js dotenv mongoose
 ```
 
 ## Setup

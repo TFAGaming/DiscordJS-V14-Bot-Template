@@ -12,6 +12,9 @@ module.exports = {
      * @param {ChatInputCommandInteraction} interaction 
      * @param {[]} args 
      */
+    options: {
+        cooldown: 15000
+    },
     run: async (client, interaction, args) => {
 
         await interaction.deferReply();

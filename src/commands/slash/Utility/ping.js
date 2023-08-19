@@ -10,6 +10,9 @@ module.exports = {
      * @param {ChatInputCommandInteraction} interaction 
      * @param {[]} args 
      */
+    options: {
+        cooldown: 5000
+    },
     run: async (client, interaction, args) => {
 
         await interaction.reply({

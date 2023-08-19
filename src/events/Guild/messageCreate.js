@@ -4,6 +4,8 @@ const { log } = require('../../functions');
 const GuildSchema = require('../../schemas/GuildSchema');
 const ExtendedClient = require('../../class/ExtendedClient');
 
+const cooldown = new Map();
+
 module.exports = {
     event: 'messageCreate',
     /**
@@ -46,6 +48,46 @@ module.exports = {
                     });
 
                     return;
+                };
+
+                if (command.structure?.cooldown) {
+                    const cooldownFunction = () => {
+                        let data = cooldown.get(message.author.id);
+
+                        data.push(commandInput);
+
+                        cooldown.set(message.author.id, data);
+
+                        setTimeout(() => {
+                            let data = cooldown.get(message.author.id);
+
+                            data = data.filter((v) => v !== commandInput);
+
+                            if (data.length <= 0) {
+                                cooldown.delete(message.author.id);
+                            } else {
+                                cooldown.set(message.author.id, data);
+                            };
+                        }, command.structure?.cooldown);
+                    };
+
+                    if (cooldown.has(message.author.id)) {
+                        let data = cooldown.get(message.author.id);
+
+                        if (data.some((v) => v === commandInput)) {
+                            await message.reply({
+                                content: 'Slow down buddy! You\'re too fast to use this command.'
+                            });
+
+                            return;
+                        } else {
+                            cooldownFunction();
+                        };
+                    } else {
+                        cooldown.set(message.author.id, [commandInput]);
+
+                        cooldownFunction();
+                    };
                 };
 
                 command.run(client, message, args);

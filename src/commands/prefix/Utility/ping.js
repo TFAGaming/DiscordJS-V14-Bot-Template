@@ -6,7 +6,8 @@ module.exports = {
         name: 'ping',
         description: 'Replies with Pong!',
         aliases: ['p'],
-        permissions: 'Administrator'
+        permissions: 'Administrator',
+        cooldown: 5000
     },
     /**
      * @param {ExtendedClient} client 
