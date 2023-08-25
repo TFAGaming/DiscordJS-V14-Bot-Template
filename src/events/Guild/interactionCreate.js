@@ -44,6 +44,16 @@ module.exports = {
           });
         }
       }
+
+      if (command.options?.nsfw) {
+        if (!interaction.channel.nsfw) {
+          return interaction.reply({
+            content: "NSFW Command. Execute this command on a NSFW Channel.",
+            ephemeral: true,
+          });
+        }
+      }
+
       if (command.options?.cooldown) {
         const cooldownFunction = () => {
           let data = cooldown.get(interaction.user.id);
