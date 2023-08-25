@@ -35,6 +35,6 @@ module.exports = {
       .setTitle("Code executed")
       .setDescription(`The return output was:\n${executedEvalValue}`);
 
-    await interaction.reply({ embeds: [embed] });
+    await interaction.editReply({ embeds: [embed] });
   },
 };
