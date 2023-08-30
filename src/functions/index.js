@@ -1,55 +1,35 @@
-const chalk = require('chalk');
+const chalk = require("chalk");
 
 /**
- * 
- * @param {string} string 
- * @param {'info' | 'err' | 'warn' | 'done' | undefined} style 
+ * Logs a message with optional styling.
+ *
+ * @param {string} string - The message to log.
+ * @param {'info' | 'err' | 'warn' | 'done' | undefined} style - The style of the log.
  */
 const log = (string, style) => {
-    switch (style) {
-        case 'info': {
-            console.log(chalk.blue('[INFO] ' + string));
+  const styles = {
+    info: { prefix: chalk.blue("[INFO]"), logFunction: console.log },
+    err: { prefix: chalk.red("[ERROR]"), logFunction: console.error },
+    warn: { prefix: chalk.yellow("[WARNING]"), logFunction: console.warn },
+    done: { prefix: chalk.green("[SUCCESS]"), logFunction: console.log },
+  };
 
-            break;
-        };
-
-        case 'err': {
-            console.error(chalk.red('[ERROR] ' + string));
-
-            break;
-        };
-
-        case 'warn': {
-            console.warn(chalk.yellow('[WARNING] ' + string));
-
-            break;
-        };
-
-        case 'done': {
-            console.log(chalk.green('[SUCCESS] ' + string));
-
-            break;
-        };
-
-        default: {
-            console.log(string);
-
-            break;
-        };
-    };
+  const selectedStyle = styles[style] || { logFunction: console.log };
+  selectedStyle.logFunction(`${selectedStyle.prefix || ""} ${string}`);
 };
 
 /**
- * 
- * @param {number} time 
- * @param {import('discord.js').TimestampStylesString} style
- * @returns {`<t:${string}>`}
+ * Formats a timestamp.
+ *
+ * @param {number} time - The timestamp in milliseconds.
+ * @param {import('discord.js').TimestampStylesString} style - The timestamp style.
+ * @returns {string} - The formatted timestamp.
  */
 const time = (time, style) => {
-    return `<t:${Math.floor(time / 1000)}${style ? `:${style}` : ''}>`;
+  return `<t:${Math.floor(time / 1000)}${style ? `:${style}` : ""}>`;
 };
 
 module.exports = {
-    log,
-    time
+  log,
+  time,
 };
