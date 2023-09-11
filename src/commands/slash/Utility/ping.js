@@ -5,15 +5,14 @@ module.exports = {
     structure: new SlashCommandBuilder()
         .setName('ping')
         .setDescription('Replies with pong!'),
-    /**
-     * @param {ExtendedClient} client 
-     * @param {ChatInputCommandInteraction} interaction 
-     * @param {[]} args 
-     */
     options: {
         cooldown: 5000
     },
-    run: async (client, interaction, args) => {
+    /**
+     * @param {ExtendedClient} client 
+     * @param {ChatInputCommandInteraction} interaction 
+     */
+    run: async (client, interaction) => {
 
         await interaction.reply({
             content: 'Pong! ' +  client.ws.ping

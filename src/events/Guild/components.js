@@ -20,7 +20,7 @@ module.exports = {
                 component.run(client, interaction);
             } catch (error) {
                 log(error, 'error');
-            }
+            };
 
             return;
         };
@@ -34,7 +34,7 @@ module.exports = {
                 component.run(client, interaction);
             } catch (error) {
                 log(error, 'error');
-            }
+            };
 
             return;
         };
@@ -48,9 +48,9 @@ module.exports = {
                 component.run(client, interaction);
             } catch (error) {
                 log(error, 'error');
-            }
+            };
 
             return;
         };
-    },
+    }
 };

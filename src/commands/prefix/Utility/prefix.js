@@ -11,7 +11,7 @@ module.exports = {
     },
     /**
      * @param {ExtendedClient} client 
-     * @param {Message} message 
+     * @param {Message<true>} message 
      * @param {string[]} args 
      */
     run: async (client, message, args) => {
