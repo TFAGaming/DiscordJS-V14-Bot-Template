@@ -42,7 +42,7 @@ module.exports = {
             `**Joined Discord**: ${time(user.createdTimestamp, 'd')} (${time(user.createdTimestamp, 'R')})`,
             `**Joined server**: ${time(member.joinedTimestamp, 'd')} (${time(member.joinedTimestamp, 'R')})`,
             `**Roles** [${member.roles?.cache?.size - 1}]: ${roles.join(', ')}`,
-            `**In a voice channel?**: ${member.voice ? 'Yes' : 'No'}`,
+            `**In a voice channel?**: ${member.voice.channel ? 'Yes' : 'No'}`,
             `**Guild owner?**: ${interaction.guild.ownerId === user.id ? 'Yes' : 'No'}`,
             `**Timed out?**: ${member.communicationDisabledUntilTimestamp ? 'Yes' : 'No'}`,
         ];
