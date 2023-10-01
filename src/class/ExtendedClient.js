@@ -5,7 +5,6 @@ const events = require("../handlers/events");
 const deploy = require("../handlers/deploy");
 const mongoose = require("../handlers/mongoose");
 const components = require("../handlers/components");
-const { ActivityType } = require("discord.js");
 
 module.exports = class extends Client {
     collection = {
@@ -27,7 +26,7 @@ module.exports = class extends Client {
             presence: {
                 activities: [{
                     name: 'something goes here',
-                    type: ActivityType.Custom,
+                    type: 4,
                     state: 'DiscordJS-V14-Bot-Template v2'
                 }]
             }
@@ -38,6 +37,7 @@ module.exports = class extends Client {
         commands(this);
         events(this);
         components(this);
+
         if (config.handler.mongodb.toggle) mongoose();
 
         await this.login(process.env.CLIENT_TOKEN || config.client.token);

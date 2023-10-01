@@ -13,7 +13,7 @@ module.exports = async (client) => {
     try {
         log('Started loading application commands... (this might take minutes!)', 'warn');
 
-        await rest.put(Routes.applicationCommands(config.client.id), {
+        await rest.put(Routes.applicationCommands(process.env.CLIENT_ID || config.client.id), {
             body: client.applicationcommandsArray
         });
 

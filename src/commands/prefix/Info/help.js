@@ -12,8 +12,8 @@ module.exports = {
     },
     /**
      * @param {ExtendedClient} client 
-     * @param {Message} message 
-     * @param {[String]} args 
+     * @param {Message<true>} message 
+     * @param {string[]} args 
      */
     run: async (client, message, args) => {
 
@@ -29,7 +29,7 @@ module.exports = {
             };
         };
 
-        const mapIntCmds = client.applicationcommandsArray.map((v) => `\`/${v.name}\`: ${v.description || '(No description)'}`);
+        const mapIntCmds = client.applicationcommandsArray.map((v) => `\`${(v.type === 2 || v.type === 3) ? '' : '/'}${v.name}\`: ${v.description || '(No description)'}`);
         const mapPreCmds = client.collection.prefixcommands.map((v) => `\`${prefix}${v.structure.name}\` (${v.structure.aliases.length > 0 ? v.structure.aliases.map((a) => `**${a}**`).join(', ') : 'None'}): ${v.structure.description || '(No description)'}`);
 
         await message.reply({
