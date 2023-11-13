@@ -7,7 +7,8 @@ module.exports = {
     structure: {
         name: 'prefix',
         description: 'Get/Set/Default prefix',
-        aliases: []
+        aliases: [],
+        permissions: 'Administrator'
     },
     /**
      * @param {ExtendedClient} client 

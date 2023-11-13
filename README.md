@@ -4,9 +4,8 @@ The simplified and popular Discord bot commands & events handler built with disc
 
 Did you like my project? Click on the star button (⭐️) right above your screen, thank you!
 
-Looking for the old version? [Click here](https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/releases/tag/v1.7.0-last).
-
 ## Features
+- Using latest [discord.js v14.x version](https://github.com/discordjs/discord.js/releases).
 - Supports all possible type of commands.
     - Message commands (AKA: Prefix commands).
     - Application commands:
@@ -24,26 +23,25 @@ Looking for the old version? [Click here](https://github.com/TFAGaming/DiscordJS
 
 ## Commands, events, and components structure
 
-> **Note**
-> This handler uses **CommonJS** modules system.
+This Discord bot template uses CommonJS modules. You cannot use `import`, `export` or any related keywords from the ES6 modules. 
 
-### Prefix:
+### Prefix commands:
 ```ts
 module.exports = {
     structure: {
         name: string,
         description: string,
         aliases: string[],
-        permissions?: PermissionFlagsBits | string,
+        permissions?: PermissionResolvable,
         cooldown?: number,
         developers?: boolean,
         nsfw?: boolean
     },
-    run: async (client, message, args) => Promise<void>
+    run: (client, message, args) => void
 };
 ```
 
-### Slash/User/Message:
+### Slash/User/Message context commands:
 ```ts
 module.exports = {
     structure: SlashCommandBuilder | ContextMenuCommandBuilder,
@@ -52,25 +50,29 @@ module.exports = {
         developers?: boolean,
         nsfw?: boolean
     },
-    run: async (client, interaction) => Promise<void>
+    run: (client, interaction) => void
 };
 ```
 
-### Event:
+### Event listener:
+
+The `...args` is a spread operator of arguments from the event chosen. For an example, if the event is **'messageCreate'**, the first argument is going to be type of **Message**.
+
 ```ts
 module.exports = {
     event: string,
     once?: boolean,
-    // '...args' are the arguments of the event chosen (from discord.js).
-    run: async (client, ...args) => Promise<void>
+    run: (client, ...args) => void
 };
 ```
 
 ### Component:
+
+The `interaction` is the interaction of the component. For an example, if the custom ID is from a button, the interaction is type of ButtonInteraction.
+
 ```ts
 module.exports = {
     customId: string,
-    // 'interaction' is the interaction of the component. If the custom ID is from a button, the interaction is type of ButtonInteraction.
     run: async (client, interaction) => Promise<void>
 };
 ```
@@ -114,6 +116,13 @@ module.exports = {
             uri: string, // ← Your MongoDB URI string (USE .env IS RECOMMENDED)
             toggle: boolean // ← Connect to the database or not? (true: Yes, false: No)
         }
+    },
+    messageSettings: {
+        nsfwMessage: string, // ← If the command's channel is not NSFW
+        developerMessage: string, // ← If the author of the command isn't a developer
+        cooldownMessage: string, // ← If the author of the command has cooldown
+        notHasPermissionMessage: string, // ← If the author of the command doesn't have required permissions
+        missingDevIDsMessage: string // ← If the developers IDs from the array are missing.
     }
 }
 ```
@@ -121,21 +130,30 @@ module.exports = {
 You can use ENV instead of `config.js` to keep your bot token and ID and your MongoDB URI in a safe place. Rename the file `.env.example` to `.env` and fill all the required values.
 
 ```apache
-CLIENT_TOKEN = Your bot token
-CLIENT_ID = Your bot ID
-MONGODB_URI = Your mongodb URI string
+CLIENT_TOKEN = "Your bot token"
+CLIENT_ID = "Your bot ID"
+MONGODB_URI = "Your mongodb URI string"
 ```
 
-6. Initialize a new package and install all [required packages](#packages):
+> **Important**
+> Do not share any of your project's secrets, such as passwords or tokens to anybody else. If you don't follow this note, this will allow any attackers to manipulate your project without asking your permissions.
+
+6. Initialize a new npm package:
 
 ```
-npm init -y
+npm init
+```
+
+7. Install all [required packages](#packages):
+
+```
 npm install chalk@2.4.2 discord.js dotenv mongoose
 ```
 
-7. To start your bot, run `node .` or `npm run start`.
-8. Enjoy. =)
+8. To start your bot, run `node .` or `npm run start`.
+9. Enjoy. =)
 
+<!--
 ## Hosting (<img src="https://media.discordapp.net/attachments/1111644651036876822/1124045180484472882/discloud_white_horizon-e96efbfa.png?width=960&height=163" width=100>)
 Use [Discloud](https://discloudbot.com/)! A trust-worthy Discord bot hosting service.
 
@@ -159,6 +177,8 @@ API = tools
 > **Warning**
 > Discloud has recently made every Free plan servers into **15 days** hosting only. Use the command `.rw` from their bot in the commands channel (on their Discord server) to reset the timer. Join the server: [Click here!](https://discord.gg/discloud-584490943034425391)
 
+-->
+
 ## Command options
 The command options, each property is optional, which means it's allowed to provide an `undefined` value to one of these properties below.
 
@@ -166,6 +186,24 @@ The command options, each property is optional, which means it's allowed to prov
 - `cooldown` (**number**): The cooldown of the command, in milliseconds.
 - `developers` (**boolean**): Whenever the command is executable only to the developers of the bot.
 - `nsfw` (**boolean**): Whenever this command is executable only in NSFW channels.
+
+## FAQs
+### I'm getting this error: "Unable to load application commands to Discord API"
+- The bot token and/or bot ID are invalid.
+- The bot token and bot ID are not from the same Discord bot.
+- Too many application commands.
+    - 100 Global Chat input (AKA: Slash) commands.
+    - 5 Global User context commands.
+    - 5 Global Message context commands.
+- Invalid application command structure.
+    - Missing description, type, or any required properties for a command.
+    - The command cannot be modified.
+- The Discord API has an issue ([Verify Discord status](https://discordstatus.com/)).
+
+[Learn more...](https://discord.com/developers/docs/interactions/application-commands#registering-a-command)
+
+### Is MongoDB required?
+No, MongoDB is not required. There is an option to disable it in `config.js` so you will avoid errors from the commands that requires the database, such as `?prefix`. If you want to use the database, [visit MongoDB website](https://www.mongodb.com/).
 
 ## Contributors
 Thank you to all the people who contributed to **DiscordJS-V14-Bot-Template**!
@@ -178,13 +216,6 @@ Join our Discord server if you need any help!
 <a href="https://discord.gg/E6VFACWu5V">
   <img src="https://discord.com/api/guilds/918611797194465280/widget.png?style=banner3">
 </a>
-
-## FAQs
-### I'm getting this error: "Unable to load application commands to Discord API"
-This error only hapens if your bot token and bot ID are not from the same bot. For an example, if you get a bot token from a bot, and a bot ID from another bot, this will throw the error. If you get the token and the ID from the same bot, it will return no errors.
-
-### Is MongoDB required?
-No, MongoDB is not required. There is an option to disable it in `config.js` so you will avoid errors from the commands that requires the database, such as `?prefix`. If you want to use the database, [visit MongoDB website](https://www.mongodb.com/).
 
 ## License
 [**GPL-3.0**](./LICENSE), General Public License v3

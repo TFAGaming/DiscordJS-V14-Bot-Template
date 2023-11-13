@@ -12,7 +12,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "chalk": "^2.4.2",
-    "discord.js": "^14.13.0",
+    "discord.js": "^14.14.1",
     "dotenv": "^16.3.1",
     "mongoose": "^7.3.1"
   }
