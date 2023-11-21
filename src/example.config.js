@@ -20,6 +20,10 @@ module.exports = {
     users: {
         developers: ["Your account ID"],
     },
+    development: { 
+        enabled: true,
+        guild: "Enter your guild ID here or you can use .env",
+    }, 
     messageSettings: {
         nsfwMessage: "The current channel is not a NSFW channel.",
         developerMessage: "You are not authorized to use this command.",
