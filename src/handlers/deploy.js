@@ -18,14 +18,25 @@ module.exports = async (client) => {
       "info"
     );
 
-    await rest.put(
-      Routes.applicationCommands(process.env.CLIENT_ID || config.client.id),
-      {
-        body: client.applicationcommandsArray,
-      }
-    );
+    const guildId = process.env.GUILD_ID || config.development.guild;
 
-    log("Successfully loaded application commands to Discord API.", "done");
+    if (config.development && config.development.enabled) {
+      await rest.put(
+        Routes.applicationGuildCommands(process.env.CLIENT_ID || config.client.id, guildId),
+        {
+          body: client.applicationcommandsArray,
+        }
+      );
+      log(`Successfully loaded application commands to guild ${guildId}.`, "done");
+    } else {
+      await rest.put(
+        Routes.applicationCommands(process.env.CLIENT_ID || config.client.id),
+        {
+          body: client.applicationcommandsArray,
+        }
+      );
+      log("Successfully loaded application commands globally to Discord API.", "done");
+    }
   } catch (e) {
     log("Unable to load application commands to Discord API.", "err");
   }
