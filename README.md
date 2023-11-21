@@ -117,6 +117,10 @@ module.exports = {
             toggle: boolean // ← Connect to the database or not? (true: Yes, false: No)
         }
     },
+    development: { 
+        enabled: boolean, // ← Toggle development mode, if set to true, commands will ONLY deploy to the guild specified below, or GUILD_ID in .env
+        guild: string, // ← Your guild ID (USE .env IS RECOMMENDED)
+    }, 
     messageSettings: {
         nsfwMessage: string, // ← If the command's channel is not NSFW
         developerMessage: string, // ← If the author of the command isn't a developer
