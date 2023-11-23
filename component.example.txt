@@ -3,6 +3,9 @@ const ExtendedClient = require('../../class/ExtendedClient');
 
 module.exports = {
     customId: '',
+    options: {
+    public: boolean
+    },
     /**
      * 
      * @param {ExtendedClient} client 
