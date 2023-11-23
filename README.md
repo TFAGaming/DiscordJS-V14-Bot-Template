@@ -73,6 +73,9 @@ The `interaction` is the interaction of the component. For an example, if the cu
 ```ts
 module.exports = {
     customId: string,
+    options?: {
+        public?: boolean
+    },
     run: async (client, interaction) => Promise<void>
 };
 ```
@@ -136,6 +139,7 @@ You can use ENV instead of `config.js` to keep your bot token and ID and your Mo
 ```apache
 CLIENT_TOKEN = "Your bot token"
 CLIENT_ID = "Your bot ID"
+GUILD_ID = "Your guild ID"
 MONGODB_URI = "Your mongodb URI string"
 ```
 
@@ -190,6 +194,11 @@ The command options, each property is optional, which means it's allowed to prov
 - `cooldown` (**number**): The cooldown of the command, in milliseconds.
 - `developers` (**boolean**): Whenever the command is executable only to the developers of the bot.
 - `nsfw` (**boolean**): Whenever this command is executable only in NSFW channels.
+
+## Component options
+The component options, each property is optional which means it's allowed to provide an `undefined` value to one of these properties below.
+
+- `public` (**boolean**): If set to true, the component will be available to everyone (default), if set to false, the component will be available to the component owner (original interaction user) only.
 
 ## FAQs
 ### I'm getting this error: "Unable to load application commands to Discord API"
