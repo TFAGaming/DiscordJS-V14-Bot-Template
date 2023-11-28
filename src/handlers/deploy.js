@@ -18,17 +18,26 @@ module.exports = async (client) => {
       "info"
     );
 
-    const guildId = process.env.GUILD_ID || config.development.guild;
-
+    function isSnowflake(id) {
+      return /^\d+$/.test(id);
+  }
+  
+  const guildId = process.env.GUILD_ID || config.development.guild;
+  
+  if (!isSnowflake(guildId)) {
+      log("Guild ID is missing. Please set it in .env or config file or disable development in the config", "err");
+      return; 
+  }
+    
     if (config.development && config.development.enabled) {
       await rest.put(
-        Routes.applicationGuildCommands(process.env.CLIENT_ID || config.client.id, guildId),
-        {
-          body: client.applicationcommandsArray,
-        }
+          Routes.applicationGuildCommands(process.env.CLIENT_ID || config.client.id, guildId),
+          {
+              body: client.applicationcommandsArray,
+          }
       );
       log(`Successfully loaded application commands to guild ${guildId}.`, "done");
-    } else {
+    } else { 
       await rest.put(
         Routes.applicationCommands(process.env.CLIENT_ID || config.client.id),
         {
@@ -38,6 +47,6 @@ module.exports = async (client) => {
       log("Successfully loaded application commands globally to Discord API.", "done");
     }
   } catch (e) {
-    log("Unable to load application commands to Discord API.", "err");
+    log(`Unable to load application commands to Discord API: ${e.message}`, "err");
   }
 };
