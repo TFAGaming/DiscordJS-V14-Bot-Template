@@ -42,6 +42,7 @@ module.exports = (client) => {
                     log(`Unable to load the autocomplete component ${file} due to missing 'commandName' or 'run' properties.`, 'warn');
                     continue;
                 }
+                
                 client.collection.components.autocomplete.set(module.commandName, module);
                 
                 log(`Loaded new autocomplete component: ${file}`, 'info');
