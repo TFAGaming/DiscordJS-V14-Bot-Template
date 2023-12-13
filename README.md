@@ -1,6 +1,6 @@
 # <samp>DiscordJS-V14-Bot-Template</samp> v2
 
-The simplified and popular Discord bot commands & events handler built with discord.js version 14 and written in JavaScript. This handler can load up to 4 different type of commands; Prefix, Slash, User context and Message context. It can also handles components; Buttons, Modal submits, Select menus (any type).
+The simplified and popular Discord bot commands & events handler built with discord.js version 14 and written in JavaScript. This handler can load up to 4 different type of commands; Prefix, Slash, User context and Message context. It can also handles components; Buttons, Modal submits, Select menus (any type) and autocomplete.
 
 Did you like my project? Click on the star button (⭐️) right above your screen, thank you!
 
@@ -16,6 +16,7 @@ Did you like my project? Click on the star button (⭐️) right above your scre
     - Buttons
     - Select menus
     - Modals
+    - Autocomplete
 - Easy and simple to use.
 - Advanced command options ([click here](#command-options)).
 - Updated to latest discord.js version.
@@ -34,6 +35,7 @@ module.exports = {
         aliases: string[],
         permissions?: PermissionResolvable,
         cooldown?: number,
+        globalCooldown?: boolean,
         developers?: boolean,
         nsfw?: boolean
     },
@@ -47,6 +49,7 @@ module.exports = {
     structure: SlashCommandBuilder | ContextMenuCommandBuilder,
     options?: {
         cooldown?: number,
+        globalCooldown?: boolean,
         developers?: boolean,
         nsfw?: boolean
     },
@@ -128,6 +131,7 @@ module.exports = {
         nsfwMessage: string, // ← If the command's channel is not NSFW
         developerMessage: string, // ← If the author of the command isn't a developer
         cooldownMessage: string, // ← If the author of the command has cooldown
+        globalCooldownMessage: string, // ← If the author of the command has global cooldown
         notHasPermissionMessage: string, // ← If the author of the command doesn't have required permissions
         missingDevIDsMessage: string // ← If the developers IDs from the array are missing.
     }
@@ -192,8 +196,9 @@ The command options, each property is optional, which means it's allowed to prov
 
 - `permissions` (**PermissionFlagsBits** | **string**): The required permissions for the command, available to message commands only.
 - `cooldown` (**number**): The cooldown of the command, in milliseconds.
-- `developers` (**boolean**): Whenever the command is executable only to the developers of the bot.
-- `nsfw` (**boolean**): Whenever this command is executable only in NSFW channels.
+- `globalCooldown` (**boolean**): Determines whether the cooldown is global or not.
+- `developers` (**boolean**): Determines whether the command is executable only to the developers of the bot.
+- `nsfw` (**boolean**): Determines whether this command is executable only in NSFW channels.
 
 ## Component options
 The component options, each property is optional which means it's allowed to provide an `undefined` value to one of these properties below.
