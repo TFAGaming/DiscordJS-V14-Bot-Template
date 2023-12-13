@@ -36,14 +36,18 @@ module.exports = (client) => {
                     continue;
                 };
 
-                client.collection.components.modals.set(module.customId, module);
+            
+            } else if (dir === 'autocomplete') {
+                if (!module.commandName || !module.run) {
+                    log(`Unable to load the autocomplete component ${file} due to missing 'commandName' or 'run' properties.`, 'warn');
+                    continue;
+                }
+                client.collection.components.autocomplete.set(module.commandName, module);
+                
+                log(`Loaded new autocomplete component: ${file}`, 'info');
             } else {
-                log('Invalid component type: ' + file, 'warn');
-
-                continue;
-            };
-
-            log('Loaded new component: ' + file, 'info');
-        };
-    };
+                log(`Invalid component type: ${file}`, 'warn');
+            }
+        }
+    }
 };
