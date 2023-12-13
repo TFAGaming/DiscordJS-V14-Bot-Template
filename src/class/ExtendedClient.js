@@ -14,7 +14,8 @@ module.exports = class extends Client {
         components: {
             buttons: new Collection(),
             selects: new Collection(),
-            modals: new Collection()
+            modals: new Collection(),
+            autocomplete: new Collection()
         }
     };
     applicationcommandsArray = [];
