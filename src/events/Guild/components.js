@@ -72,5 +72,19 @@ module.exports = {
 
             return;
         };
+
+        if (interaction.isAutocomplete()) {
+            const component = client.collection.components.autocomplete.get(interaction.commandName);
+
+            if (!component) return;
+
+            try {
+                component.run(client, interaction);
+            } catch (error) {
+                log(error, 'error');
+            }
+
+            return;
+        }
     }
 };

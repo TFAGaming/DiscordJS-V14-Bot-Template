@@ -86,37 +86,39 @@ module.exports = {
       }
 
       if (command.options?.cooldown) {
+        const isGlobalCooldown = command.options.globalCooldown;
+        const cooldownKey = isGlobalCooldown ? 'global_' + command.structure.name : interaction.user.id;
         const cooldownFunction = () => {
-          let data = cooldown.get(interaction.user.id);
+          let data = cooldown.get(cooldownKey);
 
           data.push(interaction.commandName);
 
-          cooldown.set(interaction.user.id, data);
+          cooldown.set(cooldownKey, data);
 
           setTimeout(() => {
-            let data = cooldown.get(interaction.user.id);
+            let data = cooldown.get(cooldownKey);
 
             data = data.filter((v) => v !== interaction.commandName);
 
             if (data.length <= 0) {
-              cooldown.delete(interaction.user.id);
+              cooldown.delete(cooldownKey);
             } else {
-              cooldown.set(interaction.user.id, data);
+              cooldown.set(cooldownKey, data);
             }
-          }, command.options?.cooldown);
+          }, command.options.cooldown);
         };
 
-        if (cooldown.has(interaction.user.id)) {
-          let data = cooldown.get(interaction.user.id);
+        if (cooldown.has(cooldownKey)) {
+          let data = cooldown.get(cooldownKey);
 
           if (data.some((v) => v === interaction.commandName)) {
+            const cooldownMessage = isGlobalCooldown 
+              ? config.messageSettings.globalCooldownMessage ?? "Slow down buddy! This command is on a global cooldown"
+              : config.messageSettings.cooldownMessage ?? "Slow down buddy! You're too fast to use this command";
+
             await interaction.reply({
-              content:
-                config.messageSettings.cooldownMessage !== undefined &&
-                config.messageSettings.cooldownMessage !== null &&
-                config.messageSettings.cooldownMessage !== ""
-                  ? config.messageSettings.cooldownMessage
-                  : "Slow down buddy! You're too fast to use this command",
+              content: cooldownMessage,
+              ephemeral: true,
             });
 
             return;
@@ -124,8 +126,7 @@ module.exports = {
             cooldownFunction();
           }
         } else {
-          cooldown.set(interaction.user.id, [interaction.commandName]);
-
+          cooldown.set(cooldownKey, [interaction.commandName]);
           cooldownFunction();
         }
       }
