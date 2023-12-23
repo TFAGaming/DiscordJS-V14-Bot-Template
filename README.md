@@ -79,7 +79,7 @@ module.exports = {
     options?: {
         public?: boolean
     },
-    run: async (client, interaction) => Promise<void>
+    run: (client, interaction) => void
 };
 ```
 
@@ -101,65 +101,21 @@ module.exports = {
 2. Download this project as a **.zip** file: [Click here](https://github.com/TFAGaming/DiscordJS-V14-Bot-Template/archive/refs/heads/main.zip)
 3. Extract the .zip file into a normal folder.
 4. Open VSCode, click on **Open Folder**, and select the new created folder.
-5. Go to `src/` and rename `example.config.js` to `config.js` and fill all the required values.
-
-```ts
-module.exports = {
-    client: {
-        token: string, // ← Your bot token (USE .env IS RECOMMENDED)
-        id: string // ← Your bot ID (USE .env IS RECOMMENDED)
-    },
-    handler: {
-        prefix: string, // ← The bot prefix
-        deploy: boolean, // ← Always load application commands to Discord? (true: Yes, false: No)
-        commands: {
-            prefix: boolean, // ← Toggle prefix commands
-            slash: boolean, // ← Toggle slash commands
-            user: boolean, // ← Toggle user commands
-            message: boolean // ← Toggle message commands
-        },
-        mongodb: {
-            uri: string, // ← Your MongoDB URI string (USE .env IS RECOMMENDED)
-            toggle: boolean // ← Connect to the database or not? (true: Yes, false: No)
-        }
-    },
-    development: { 
-        enabled: boolean, // ← Toggle development mode, if set to true, commands will ONLY deploy to the guild specified below, or GUILD_ID in .env
-        guild: string, // ← Your guild ID (USE .env IS RECOMMENDED)
-    }, 
-    messageSettings: {
-        nsfwMessage: string, // ← If the command's channel is not NSFW
-        developerMessage: string, // ← If the author of the command isn't a developer
-        cooldownMessage: string, // ← If the author of the command has cooldown
-        globalCooldownMessage: string, // ← If the author of the command has global cooldown
-        notHasPermissionMessage: string, // ← If the author of the command doesn't have required permissions
-        missingDevIDsMessage: string // ← If the developers IDs from the array are missing.
-    }
-}
-```
-
-You can use ENV instead of `config.js` to keep your bot token and ID and your MongoDB URI in a safe place. Rename the file `.env.example` to `.env` and fill all the required values.
-
-```apache
-CLIENT_TOKEN = "Your bot token"
-CLIENT_ID = "Your bot ID"
-GUILD_ID = "Your guild ID"
-MONGODB_URI = "Your mongodb URI string"
-```
+5. Go to `src/` and rename `example.config.js` to `config.js` and fill all the required values. You can use ENV instead of `config.js` to keep your bot token and ID, and your MongoDB URI in a secured place by renaming the file `.env.example` to `.env` and filling all required values.
 
 > **Important**
-> Do not share any of your project's secrets, such as passwords or tokens to anybody else. If you don't follow this note, this will allow any attackers to manipulate your project without asking your permissions.
+> Sharing your Discord bot's token to anyone is a **very risky** move since you'll **allow them** to **use your bot**. This is also a dangerous move for the MongoDB database, we don't recommend you to use any public URIs or sharing your own database connection URL.
 
 6. Initialize a new npm package:
 
 ```
-npm init
+npm init -y
 ```
 
 7. Install all [required packages](#packages):
 
 ```
-npm install chalk@2.4.2 discord.js dotenv mongoose
+npm install chalk@2.4.2 discord.js@latest dotenv mongoose
 ```
 
 8. To start your bot, run `node .` or `npm run start`.

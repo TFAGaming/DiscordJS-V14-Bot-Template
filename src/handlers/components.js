@@ -36,7 +36,7 @@ module.exports = (client) => {
                     continue;
                 };
 
-            
+                client.collection.components.modals.set(module.customId, module);
             } else if (dir === 'autocomplete') {
                 if (!module.commandName || !module.run) {
                     log(`Unable to load the autocomplete component ${file} due to missing 'commandName' or 'run' properties.`, 'warn');

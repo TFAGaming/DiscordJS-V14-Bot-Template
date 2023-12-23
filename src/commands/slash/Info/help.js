@@ -20,7 +20,7 @@ module.exports = {
 
         let prefix = config.handler.prefix;
 
-        if (config.handler?.mongodb?.toggle) {
+        if (config.handler?.mongodb?.enabled) {
             try {
                 const data = (await GuildSchema.findOne({ guild: message.guildId }));
 

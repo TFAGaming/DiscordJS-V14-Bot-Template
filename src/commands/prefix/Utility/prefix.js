@@ -17,7 +17,7 @@ module.exports = {
      */
     run: async (client, message, args) => {
 
-        if (!config.handler?.mongodb?.toggle) {
+        if (!config.handler?.mongodb?.enabled) {
             await message.reply({
                 content: 'Database is not ready, this command cannot be executed.'
             });

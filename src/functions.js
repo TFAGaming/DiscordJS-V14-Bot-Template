@@ -29,7 +29,18 @@ const time = (time, style) => {
   return `<t:${Math.floor(time / 1000)}${style ? `:${style}` : ""}>`;
 };
 
+/**
+ * Whenever a string is a valid snowflake (for Discord).
+
+ * @param {string} id 
+ * @returns {boolean}
+ */
+const isSnowflake = (id) => {
+  return /^\d+$/.test(id);
+};
+
 module.exports = {
   log,
   time,
+  isSnowflake
 };

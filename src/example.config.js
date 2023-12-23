@@ -13,15 +13,15 @@ module.exports = {
             message: true,
         },
         mongodb: {
-            uri: "Your MongoDB URI string (USE .env FOR SAFETY)",
-            toggle: false,
+            enabled: false,
+            uri: "Your MongoDB URI string (USE .env FOR SAFETY)"
         },
     },
     users: {
         developers: ["Your account ID"],
     },
     development: { 
-        enabled: true,
+        enabled: false,
         guild: "Enter your guild ID here or you can use .env",
     }, 
     messageSettings: {
