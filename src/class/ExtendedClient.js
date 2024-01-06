@@ -39,7 +39,7 @@ module.exports = class extends Client {
         events(this);
         components(this);
 
-        if (config.handler.mongodb.toggle) mongoose();
+        if (config.handler.mongodb.enabled) mongoose();
 
         await this.login(process.env.CLIENT_TOKEN || config.client.token);
 
