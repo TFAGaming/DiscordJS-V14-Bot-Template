@@ -74,9 +74,9 @@ module.exports = {
                                         : "You are not authorized to use this command",
                             });
                         }, 5 * 1000);
-                    }
 
-                    return;
+                        return;
+                    }
                 }
 
                 if (command.structure?.nsfw && !message.channel.nsfw) {
