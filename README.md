@@ -1,6 +1,6 @@
 # <samp>DiscordJS-V14-Bot-Template</samp> v2
 
-The simplified and popular Discord bot commands & events handler built with discord.js version 14 and written in JavaScript. This handler can load up to 4 different type of commands; Prefix, Slash, User context and Message context. It can also handles components; Buttons, Modal submits, Select menus (any type) and autocomplete.
+A simplified and popular Discord bot commands & events handler built with discord.js version 14 and written in JavaScript. This handler can load up to 4 different types of commands: Prefix, Slash, User context, and Message context. It can also handle components, including Buttons, Modals, Select menus (any type), and autocomplete.
 
 Did you like my project? Click on the star button (⭐️) right above your screen, thank you!
 
@@ -24,7 +24,8 @@ Did you like my project? Click on the star button (⭐️) right above your scre
 
 ## Commands, events, and components structure
 
-This Discord bot template uses CommonJS modules. You cannot use `import`, `export` or any related keywords from the ES6 modules. 
+This Discord bot template uses CommonJS modules. You cannot use `import`, `export`, or any related keywords from the ES6 modules.
+
 
 ### Prefix commands:
 ```ts
@@ -90,8 +91,8 @@ module.exports = {
 - **dotenv** v^latest
 - **mongoose** v^latest
 
-> **Warning**
-> Installing any version from the package `chalk` that is over **v2.4.2**, it will throw an error that you must enable ES6 modules, while this handler uses CommonJS modules.
+> [!WARNING]
+> Installing any version from the package `chalk` that is over **v2.4.2** will throw an error that you must enable ES6 modules, while this handler uses CommonJS modules.
 
 ### Platforms:
 - **Node.js** v16.9.0 or newer
@@ -103,8 +104,8 @@ module.exports = {
 4. Open VSCode, click on **Open Folder**, and select the new created folder.
 5. Go to `src/` and rename `example.config.js` to `config.js` and fill all the required values. You can use ENV instead of `config.js` to keep your bot token and ID, and your MongoDB URI in a secured place by renaming the file `.env.example` to `.env` and filling all required values.
 
-> **Important**
-> Sharing your Discord bot's token to anyone is a **very risky** move since you'll **allow them** to **use your bot**. This is also a dangerous move for the MongoDB database, we don't recommend you to use any public URIs or sharing your own database connection URL.
+> [!CAUTION]
+> Sharing your Discord bot's token with anyone is a very risky move since you'll allow them to use your bot. This is also a dangerous move for the MongoDB database; we don't recommend using any public URIs or sharing your database connection URL.
 
 6. Initialize a new npm package:
 
@@ -162,7 +163,7 @@ The component options, each property is optional which means it's allowed to pro
 - `public` (**boolean**): If set to true, the component will be available to everyone (default), if set to false, the component will be available to the component owner (original interaction user) only.
 
 ## FAQs
-### I'm getting this error: "Unable to load application commands to Discord API"
+### 1. I'm getting this error: "Unable to load application commands to Discord API"
 - The bot token and/or bot ID are invalid.
 - The bot token and bot ID are not from the same Discord bot.
 - Too many application commands.
@@ -176,8 +177,11 @@ The component options, each property is optional which means it's allowed to pro
 
 [Learn more...](https://discord.com/developers/docs/interactions/application-commands#registering-a-command)
 
-### Is MongoDB required?
-No, MongoDB is not required. There is an option to disable it in `config.js` so you will avoid errors from the commands that requires the database, such as `?prefix`. If you want to use the database, [visit MongoDB website](https://www.mongodb.com/).
+### 2. I'm unable to view any application commands, no errors in console?
+This is a common problem for developers, to fix this issue, restart the Discord app or go in a different text channel.
+
+### 3. Is MongoDB required?
+No, MongoDB is not required. There is an option to disable it in `config.js` so you will avoid errors from the commands that requires the database, such as `?prefix`. If you want to use the database, visit [MongoDB website](https://www.mongodb.com/).
 
 ## Contributors
 Thank you to all the people who contributed to **DiscordJS-V14-Bot-Template**!

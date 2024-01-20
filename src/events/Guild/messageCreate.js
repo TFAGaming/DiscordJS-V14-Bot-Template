@@ -119,11 +119,11 @@ module.exports = {
                         if (data.some((v) => v === commandInput)) {
                             await message.reply({
                                 content:
-                                    config.messageSettings.cooldownMessage !== undefined &&
+                                    (config.messageSettings.cooldownMessage !== undefined &&
                                         config.messageSettings.cooldownMessage !== null &&
                                         config.messageSettings.cooldownMessage !== ""
                                         ? config.messageSettings.cooldownMessage
-                                        : "Slow down buddy! You're too fast to use this command.",
+                                        : "Slow down buddy! You're too fast to use this command ({cooldown}s).").replace(/{cooldown}/g, command.structure.cooldown / 1000),
                             });
 
                             return;

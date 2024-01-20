@@ -23,7 +23,8 @@ module.exports = {
                     ephemeral: true
                 });
                 return false;
-            }
+            };
+            
             return true;
         };
 
@@ -41,7 +42,7 @@ module.exports = {
             }
 
             return;
-        }
+        };
 
         if (interaction.isAnySelectMenu()) {
             const component = client.collection.components.selects.get(interaction.customId);
@@ -57,7 +58,7 @@ module.exports = {
             }
 
             return;
-        }
+        };
 
         if (interaction.isModalSubmit()) {
             const component = client.collection.components.modals.get(interaction.customId);
@@ -85,6 +86,6 @@ module.exports = {
             }
 
             return;
-        }
+        };
     }
 };

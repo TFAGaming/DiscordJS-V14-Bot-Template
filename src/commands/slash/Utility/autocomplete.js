@@ -9,7 +9,8 @@ module.exports = {
             option.setName('fruit')
                 .setDescription('Choose a fruit')
                 .setAutocomplete(true)
-                .setRequired(true)),
+                .setRequired(true)
+            ),
     options: {
         public: true
     },
@@ -19,7 +20,12 @@ module.exports = {
      * @param {import('discord.js').CommandInteraction} interaction 
      */
     run: async (client, interaction) => {
+
         const chosenFruit = interaction.options.getString('fruit');
-        await interaction.reply(`You chose the fruit: ${chosenFruit}`);
+
+        await interaction.reply({
+            content: `You chose the fruit: **${chosenFruit}**`
+        });
+
     }
 };

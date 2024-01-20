@@ -112,9 +112,9 @@ module.exports = {
                     let data = cooldown.get(cooldownKey);
 
                     if (data.some((v) => v === interaction.commandName)) {
-                        const cooldownMessage = isGlobalCooldown
-                            ? config.messageSettings.globalCooldownMessage ?? "Slow down buddy! This command is on a global cooldown"
-                            : config.messageSettings.cooldownMessage ?? "Slow down buddy! You're too fast to use this command";
+                        const cooldownMessage = (isGlobalCooldown
+                            ? config.messageSettings.globalCooldownMessage ?? "Slow down buddy! This command is on a global cooldown ({cooldown}s)."
+                            : config.messageSettings.cooldownMessage ?? "Slow down buddy! You're too fast to use this command ({cooldown}s).").replace(/{cooldown}/g, command.options.cooldown / 1000);
 
                         await interaction.reply({
                             content: cooldownMessage,
