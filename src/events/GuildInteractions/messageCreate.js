@@ -46,6 +46,22 @@ module.exports = {
 
         if (command) {
             try {
+                if (command.structure?.ownerOnly) {
+                    if (message.author.id !== config.users.ownerId) {
+                        await message.reply({
+                            content:
+                                config.messageSettings.ownerMessage !== undefined &&
+                                    config.messageSettings.ownerMessage !== null &&
+                                    config.messageSettings.ownerMessage !== ""
+                                    ? config.messageSettings.ownerMessage
+                                    : "The bot developer has the only permissions to use this command.",
+                            ephemeral: true
+                        });
+
+                        return;
+                    }
+                }
+
                 if (
                     command.structure?.permissions &&
                     !message.member.permissions.has(command.structure?.permissions)
@@ -57,6 +73,7 @@ module.exports = {
                                 config.messageSettings.notHasPermissionMessage !== ""
                                 ? config.messageSettings.notHasPermissionMessage
                                 : "You do not have the permission to use this command.",
+                        ephemeral: true
                     });
 
                     return;
@@ -64,19 +81,18 @@ module.exports = {
 
                 if (command.structure?.developers) {
                     if (!config.users.developers.includes(message.author.id)) {
-                        setTimeout(async () => {
-                            await message.reply({
-                                content:
-                                    config.messageSettings.developerMessage !== undefined &&
-                                        config.messageSettings.developerMessage !== null &&
-                                        config.messageSettings.developerMessage !== ""
-                                        ? config.messageSettings.developerMessage
-                                        : "You are not authorized to use this command",
-                            });
-                        }, 5 * 1000);
-                    }
+                        await message.reply({
+                            content:
+                                config.messageSettings.developerMessage !== undefined &&
+                                    config.messageSettings.developerMessage !== null &&
+                                    config.messageSettings.developerMessage !== ""
+                                    ? config.messageSettings.developerMessage
+                                    : "You are not authorized to use this command",
+                            ephemeral: true
+                        });
 
-                    return;
+                        return;
+                    }
                 }
 
                 if (command.structure?.nsfw && !message.channel.nsfw) {
@@ -87,6 +103,7 @@ module.exports = {
                                 config.messageSettings.nsfwMessage !== ""
                                 ? config.messageSettings.nsfwMessage
                                 : "The current channel is not a NSFW channel.",
+                        ephemeral: true
                     });
 
                     return;
@@ -124,6 +141,7 @@ module.exports = {
                                         config.messageSettings.cooldownMessage !== ""
                                         ? config.messageSettings.cooldownMessage
                                         : "Slow down buddy! You're too fast to use this command ({cooldown}s).").replace(/{cooldown}/g, command.structure.cooldown / 1000),
+                                ephemeral: true
                             });
 
                             return;

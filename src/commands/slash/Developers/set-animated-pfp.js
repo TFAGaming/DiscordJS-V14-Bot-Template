@@ -37,8 +37,6 @@ module.exports = {
             return;
         };
 
-        console.log(attachment)
-
         await client.user.setAvatar(attachment.proxyURL)
             .then(async () => {
                 await interaction.editReply({

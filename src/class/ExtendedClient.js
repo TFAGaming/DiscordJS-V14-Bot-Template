@@ -22,8 +22,15 @@ module.exports = class extends Client {
 
     constructor() {
         super({
-            intents: [Object.keys(GatewayIntentBits)],
-            partials: [Object.keys(Partials)],
+            intents: 3276799, // Every intent
+            partials: [
+                Partials.Channel,
+                Partials.GuildMember,
+                Partials.Message,
+                Partials.Reaction,
+                Partials.User,
+                Partials.ThreadMember
+            ],
             presence: {
                 activities: [{
                     name: 'something goes here',

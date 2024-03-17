@@ -37,6 +37,7 @@ module.exports = {
         permissions?: PermissionResolvable,
         cooldown?: number,
         globalCooldown?: boolean,
+        ownerOnly?: boolean,
         developers?: boolean,
         nsfw?: boolean
     },
@@ -51,6 +52,7 @@ module.exports = {
     options?: {
         cooldown?: number,
         globalCooldown?: boolean,
+        ownerOnly?: boolean,
         developers?: boolean,
         nsfw?: boolean
     },

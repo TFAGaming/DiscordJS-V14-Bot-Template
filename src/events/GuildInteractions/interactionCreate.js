@@ -38,6 +38,22 @@ module.exports = {
         if (!command) return;
 
         try {
+            if (command.options?.ownerOnly) {
+                if (interaction.user.id !== config.users.ownerId) {
+                    await interaction.reply({
+                        content:
+                            config.messageSettings.ownerMessage !== undefined &&
+                                config.messageSettings.ownerMessage !== null &&
+                                config.messageSettings.ownerMessage !== ""
+                                ? config.messageSettings.ownerMessage
+                                : "The bot developer has the only permissions to use this command.",
+                        ephemeral: true
+                    });
+
+                    return;
+                }
+            }
+
             if (command.options?.developers) {
                 if (
                     config.users?.developers?.length > 0 &&

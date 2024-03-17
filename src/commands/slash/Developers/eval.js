@@ -17,7 +17,7 @@ module.exports = {
                 .setRequired(true)
         ),
     options: {
-        developers: true,
+        ownerOnly: true
     },
     /**
      * @param {ExtendedClient} client
@@ -32,6 +32,10 @@ module.exports = {
             let executedEvalValue = eval(code);
 
             if (typeof executedEvalValue !== 'string') executedEvalValue = require('util').inspect(executedEvalValue);
+
+            executedEvalValue = `${executedEvalValue}` // Making sure it's string
+
+            executedEvalValue = executedEvalValue.replace(new RegExp(client.token, 'gi'), '?');
 
             await interaction.editReply({
                 embeds: [
