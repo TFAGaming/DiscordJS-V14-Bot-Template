@@ -22,7 +22,7 @@ module.exports = class extends Client {
 
     constructor() {
         super({
-            intents: 3276799, // Every intent
+            intents: 3276799,
             partials: [
                 Partials.Channel,
                 Partials.GuildMember,
@@ -32,13 +32,22 @@ module.exports = class extends Client {
                 Partials.ThreadMember
             ],
             presence: {
-                activities: [{
-                    name: 'something goes here',
-                    type: 4,
-                    state: 'DiscordJS-V14-Bot-Template v2'
-                }]
+                activities: []
             }
         });
+
+
+        setInterval(() => {
+            const activities = [
+                { name: 'something goes here', type: 4, state: 'DiscordJS-V14-Bot-Template v2' },
+
+            ];
+
+            const randomIndex = Math.floor(Math.random() * activities.length);
+            this.user.setPresence({
+                activities: [activities[randomIndex]]
+            });
+        }, 30000);
     };
 
     start = async () => {
