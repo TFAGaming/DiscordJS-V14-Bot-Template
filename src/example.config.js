@@ -1,44 +1,33 @@
-module.exports = {
-    client: {
-        token: "Your Bot token (USE .env FOR SAFETY)",
-        id: "Your Bot ID (USE .env FOR SAFETY)",
+const config = {
+    database: {
+        path: './database.yml' // The database path.
     },
-    handler: {
-        prefix: "?",
-        deploy: true,
-        commands: {
-            prefix: true,
-            slash: true,
-            user: true,
-            message: true,
-        },
-        mongodb: {
-            enabled: false,
-            uri: "Your MongoDB URI string (USE .env FOR SAFETY)"
-        },
+    development: {
+        enabled: false, // If true, the bot will register all application commands to a specific guild (not globally).
+        guildId: 'Your bot development guild ID',
     },
-    users: {
-        developers: ["Your account ID", "Another account ID"],
-        ownerId: "Your account ID"
-    },
-    channels: {
-        modLogs: {
-            enabled: true,
-            channel: "The moderation-logs channel"
+    commands: {
+        prefix: '?', // For message commands, prefix is required. This can be changed by a database.
+        message_commands: true, // If true, the bot will allow users to use message (or prefix) commands.
+        application_commands: {
+            chat_input: true, // If true, the bot will allow users to use chat input (or slash) commands.
+            user_context: true, // If true, the bot will allow users to use user context menu commands.
+            message_context: true // If true, the bot will allow users to use message context menu commands.
         }
     },
-    development: { 
-        enabled: false,
-        guild: "Enter your guild ID here or you can use .env",
-    }, 
-    messageSettings: {
-        nsfwMessage: "The current channel is not a NSFW channel.",
-        ownerMessage: "The bot developer has the only permissions to use this command.",
-        developerMessage: "You are not authorized to use this command.",
-        cooldownMessage: "Slow down buddy! You're too fast to use this command ({cooldown}s).", // '{cooldown}' is a variable that shows the time to use the command again (in seconds)
-        globalCooldownMessage: "Slow down buddy! This command is on a global cooldown ({cooldown}s).", // '{cooldown}' is a variable that shows the time to use the command again (in seconds)
-        notHasPermissionMessage: "You do not have the permission to use this command.",
-        notHasPermissionComponent: "You do not have the permission to use this component.",
-        missingDevIDsMessage: "This is a developer only command, but unable to execute due to missing user IDs in configuration file."
+    users: {
+        ownerId: 'Your account ID', // The bot owner ID, which is you.
+        developers: ['Your account ID', 'Another account ID'] // The bot developers, remember to include your account ID with the other account IDs.
+    },
+    messages: { // Messages configuration for application commands and message commands handler.
+        NOT_BOT_OWNER: 'You do not have the permission to run this command because you\'re not the owner of me!',
+        NOT_BOT_DEVELOPER: 'You do not have the permission to run this command because you\'re not a developer of me!',
+        NOT_GUILD_OWNER: 'You do not have the permission to run this command because you\re not the guild owner!',
+        CHANNEL_NOT_NSFW: 'You cannot run this command in a non-NSFW channel!',
+        MISSING_PERMISSIONS: 'You do not have the permission to run this command, missing permissions.',
+        COMPONENT_NOT_PUBLIC: 'You are not the author of this button!',
+        GUILD_COOLDOWN: 'You are currently in cooldown, you have the ability to re-use this command again in \`%cooldown%s\`.'
     }
-};
+}
+
+module.exports = config;

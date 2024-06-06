@@ -1,19 +1,19 @@
 {
   "name": "discordjs-v14-bot-template",
-  "version": "2.0.0",
-  "description": "The simplified Discord bot commands & events handler built with discord.js version 14 and written in JavaScript. This handler can load up to 4 different type of commands; Prefix, Slash, User context and Message context.",
+  "version": "3.0.0",
+  "description": "A Discord bot commands, components and events handler based on discord.js v14 and fully written in JavaScript.",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Wow is this a test?\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ."
   },
   "keywords": [],
   "author": "TFAGaming",
   "license": "GPL-3.0",
   "dependencies": {
-    "chalk": "^2.4.2",
-    "discord.js": "^14.15.1",
-    "dotenv": "^16.3.1",
-    "mongoose": "^7.3.1"
+    "colors": "^1.4.0",
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "quick-yaml.db": "^1.2.2"
   }
 }

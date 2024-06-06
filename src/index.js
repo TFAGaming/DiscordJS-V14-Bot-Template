@@ -1,10 +1,13 @@
 require('dotenv').config();
-const ExtendedClient = require('./class/ExtendedClient');
+const fs = require('fs');
+const DiscordBot = require('./client/DiscordBot');
 
-const client = new ExtendedClient();
+fs.writeFileSync('./terminal.log', '', 'utf-8');
+const client = new DiscordBot();
 
-client.start();
+module.exports = client;
 
-// Handles errors and avoids crashes, better to not remove them.
+client.connect();
+
 process.on('unhandledRejection', console.error);
 process.on('uncaughtException', console.error);
