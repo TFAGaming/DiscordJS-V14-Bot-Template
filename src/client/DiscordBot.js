@@ -23,6 +23,11 @@ class DiscordBot extends Client {
     rest_application_commands_array = [];
     login_attempts = 0;
     login_timestamp = 0;
+    statusMessages = [
+        { name: 'Status 1', type: 4 },
+        { name: 'Status 2', type: 4 },
+        { name: 'Status 3', type: 4 }
+    ];
 
     commands_handler = new CommandsHandler(this);
     components_handler = new ComponentsHandler(this);
@@ -52,36 +57,35 @@ class DiscordBot extends Client {
         new ComponentsListener(this);
     }
 
+    startStatusRotation = () => {
+        let index = 0;
+        setInterval(() => {
+            this.user.setPresence({ activities: [this.statusMessages[index]] });
+            index = (index + 1) % this.statusMessages.length;
+        }, 4000);
+    }
+
     connect = async () => {
         warn(`Attempting to connect to the Discord bot... (${this.login_attempts + 1})`);
 
         this.login_timestamp = Date.now();
 
-        await this.login(process.env.CLIENT_TOKEN)
-            .then(async () => {
-                this.commands_handler.load();
-                this.components_handler.load();
-                this.events_handler.load();
+        try {
+            await this.login(process.env.CLIENT_TOKEN);
+            this.commands_handler.load();
+            this.components_handler.load();
+            this.events_handler.load();
+            this.startStatusRotation();
 
-                try {
-                    warn('Attempting to register application commands... (this might take a while!)');
-
-                    await this.commands_handler.registerApplicationCommands(config.development);
-
-                    success('Successfully registered application commands. For specific guild? ' + (config.development.enabled ? 'Yes' : 'No'));
-                } catch (err) {
-                    error('Unable to register application commands.');
-                    error(err);
-                }
-            })
-            .catch(async (err) => {
-                error('Failed to connect to the Discord bot, retrying...');
-                error(err);
-
-                this.login_attempts++;
-
-                this.connect();
-            });
+            warn('Attempting to register application commands... (this might take a while!)');
+            await this.commands_handler.registerApplicationCommands(config.development);
+            success('Successfully registered application commands. For specific guild? ' + (config.development.enabled ? 'Yes' : 'No'));
+        } catch (err) {
+            error('Failed to connect to the Discord bot, retrying...');
+            error(err);
+            this.login_attempts++;
+            setTimeout(this.connect, 5000);
+        }
     }
 }
 
