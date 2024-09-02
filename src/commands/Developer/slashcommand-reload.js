@@ -1,6 +1,7 @@
 const { ChatInputCommandInteraction, AttachmentBuilder } = require("discord.js");
 const DiscordBot = require("../../client/DiscordBot");
 const ApplicationCommand = require("../../structure/ApplicationCommand");
+const config = require("../../config");
 
 module.exports = new ApplicationCommand({
     command: {

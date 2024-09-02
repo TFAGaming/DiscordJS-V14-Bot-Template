@@ -12,7 +12,8 @@
   "license": "GPL-3.0",
   "dependencies": {
     "colors": "^1.4.0",
-    "discord.js": "^14.15.3",
+    "discord.js": "^14.16.0",
+    "discordjs-v14-bot-template": "file:",
     "dotenv": "^16.4.5",
     "quick-yaml.db": "^1.2.2"
   }
