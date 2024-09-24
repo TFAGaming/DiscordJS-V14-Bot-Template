@@ -19,7 +19,7 @@ Did you like the project? Click on the star button (⭐️) right above your scr
     - Autocomplete
 - Easy and simple to use.
 - Advanced command options.
-- Simple Database included (YAML).
+- Simple Database included (YAML) && Mongoose Database.
 
 ## Commands, Components, and Events structure:
 ### Message commands:
@@ -136,6 +136,23 @@ new Event({
 
 9. Run the command `node .` or `npm run start` to start the bot.
 10. Enjoy! The bot should be online.
+
+## MongoDB Setup
+
+>[!CAUTION]
+> Please remember not to share your Mongoose Database URI! This will give access to attackers to do anything they want with your data and database including stealing and modifying it, so please keep the URI in a safe place, which is the **.env** file.
+
+1. Go to the [MongoDB](https://www.mongodb.com/) webstie.
+2. Create an account using a safe and email and password.
+
+3. Once on the Project page, create a project with the name of your application.
+4. On the clusters page of your project, create a free or paid cluster. (This is your preference.)
+
+5. After the cluster creation you will be prompted to connect to your application. Select `Connecting with MongoDB Driver`
+6. Go to the terminal for your application and paste the following: `npm i mongoose`
+
+7. Copy the connection URI and paste it in the `.env` under `DATABASE_URI`
+8. Launch your application and MongoDB will be connected!
 
 ## Contributing
 Feel free to fork the repository and submit a new pull request if you wish to contribute to this project.
