@@ -73,15 +73,6 @@ class DiscordBot extends Client {
         new ComponentsListener(this);
     }
 
-    async testSequelizeConnection() {
-        try {
-            await this.sequelize.authenticate();
-            success('Connection to the SQLite database has been established successfully.');
-        } catch (err) {
-            error('Unable to connect to the database:', err);
-        }
-    }
-
     startStatusRotation = () => {
         let index = 0;
         setInterval(() => {
