@@ -7,6 +7,7 @@ const ComponentsHandler = require("./handler/ComponentsHandler");
 const ComponentsListener = require("./handler/ComponentsListener");
 const EventsHandler = require("./handler/EventsHandler");
 const { QuickYAML } = require('quick-yaml.db');
+// import Mongoose `const mongoose = require('mongoose');`
 
 class DiscordBot extends Client {
     collection = {
@@ -34,6 +35,21 @@ class DiscordBot extends Client {
     events_handler = new EventsHandler(this);
     database = new QuickYAML(config.database.path);
 
+    /**
+     *  Mongoose initialization
+     *  connectToDatabase = async () => {
+     *  try {
+     *      await mongoose.connect(config.database.uri, {
+     *          useNewUrlParser: true,
+     *          useUnifiedTopology: true,
+     *      });
+     *      success('Successfully connected to MongoDB.');
+     *   } catch (err) {
+     *      error('Failed to connect to MongoDB:', err);
+     *   }
+     * }
+     */
+
     constructor() {
         super({
             intents: 3276799,
@@ -57,6 +73,15 @@ class DiscordBot extends Client {
         new ComponentsListener(this);
     }
 
+    async testSequelizeConnection() {
+        try {
+            await this.sequelize.authenticate();
+            success('Connection to the SQLite database has been established successfully.');
+        } catch (err) {
+            error('Unable to connect to the database:', err);
+        }
+    }
+
     startStatusRotation = () => {
         let index = 0;
         setInterval(() => {
@@ -75,6 +100,7 @@ class DiscordBot extends Client {
             this.commands_handler.load();
             this.components_handler.load();
             this.events_handler.load();
+            // Test database connection `await this.connectToDatabase();`
             this.startStatusRotation();
 
             warn('Attempting to register application commands... (this might take a while!)');
