@@ -39,7 +39,7 @@ class DiscordBot extends Client {
      *  Mongoose initialization
      *  connectToDatabase = async () => {
      *  try {
-     *      await mongoose.connect(config.database.uri, {
+     *      await mongoose.connect(process.env.DATABASE_URI, {
      *          useNewUrlParser: true,
      *          useUnifiedTopology: true,
      *      });
