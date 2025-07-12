@@ -6,3 +6,4 @@ src/config.js
 .env
 database.yml
 terminal.log
+docs/spec.md
